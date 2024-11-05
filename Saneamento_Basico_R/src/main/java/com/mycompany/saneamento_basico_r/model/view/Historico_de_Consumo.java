@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package View;
+package com.mycompany.saneamento_basico_r.model.view;
 
 /**
  *
  * @author renan
  */
-public class Relatorios_Contas_Faturas extends javax.swing.JFrame {
+public class Historico_de_Consumo extends javax.swing.JFrame {
 
     /**
-     * Creates new form Relatorios_Contas_Faturas
+     * Creates new form Historico_de_Consumo
      */
-    public Relatorios_Contas_Faturas() {
+    public Historico_de_Consumo() {
         initComponents();
     }
 
@@ -26,18 +26,18 @@ public class Relatorios_Contas_Faturas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        edtListagemContasFaturas = new javax.swing.JScrollPane();
-        edtListagemContas = new javax.swing.JTextArea();
-        lblContasFaturas = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        edtListagemHistorico = new javax.swing.JTextArea();
+        lblHistorico = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        edtListagemContas.setColumns(20);
-        edtListagemContas.setRows(5);
-        edtListagemContasFaturas.setViewportView(edtListagemContas);
+        edtListagemHistorico.setColumns(20);
+        edtListagemHistorico.setRows(5);
+        jScrollPane1.setViewportView(edtListagemHistorico);
 
-        lblContasFaturas.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblContasFaturas.setText("Relatorio de Contas e Faturas");
+        lblHistorico.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblHistorico.setText("Histórico de Consumo");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -45,20 +45,20 @@ public class Relatorios_Contas_Faturas extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(edtListagemContasFaturas)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(153, Short.MAX_VALUE)
-                .addComponent(lblContasFaturas)
-                .addGap(127, 127, 127))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(127, 127, 127)
+                .addComponent(lblHistorico)
+                .addContainerGap(131, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(lblContasFaturas)
-                .addGap(52, 52, 52)
-                .addComponent(edtListagemContasFaturas, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(lblHistorico)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -82,27 +82,27 @@ public class Relatorios_Contas_Faturas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Relatorios_Contas_Faturas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Historico_de_Consumo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Relatorios_Contas_Faturas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Historico_de_Consumo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Relatorios_Contas_Faturas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Historico_de_Consumo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Relatorios_Contas_Faturas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Historico_de_Consumo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Relatorios_Contas_Faturas().setVisible(true);
+                new Historico_de_Consumo().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea edtListagemContas;
-    private javax.swing.JScrollPane edtListagemContasFaturas;
-    private javax.swing.JLabel lblContasFaturas;
+    private javax.swing.JTextArea edtListagemHistorico;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblHistorico;
     // End of variables declaration//GEN-END:variables
 }

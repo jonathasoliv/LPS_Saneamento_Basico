@@ -1,19 +1,19 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package View;
+package com.mycompany.saneamento_basico_r.model.view;
 
 /**
  *
  * @author renan
  */
-public class LoginGerente extends javax.swing.JFrame {
+public class LoginAdministrador extends javax.swing.JPanel {
 
     /**
-     * Creates new form LoginGerente
+     * Creates new form LoginAdministrador
      */
-    public LoginGerente() {
+    public LoginAdministrador() {
         initComponents();
     }
 
@@ -26,17 +26,15 @@ public class LoginGerente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblLoginGerente = new javax.swing.JLabel();
+        lblLoginAdministrador = new javax.swing.JLabel();
         btnLogar = new javax.swing.JButton();
         lblSenha = new javax.swing.JLabel();
         edtSenha = new javax.swing.JTextField();
         edtUsuario = new javax.swing.JTextField();
         lblUsuario = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        lblLoginGerente.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblLoginGerente.setText("Login de Gerente");
+        lblLoginAdministrador.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblLoginAdministrador.setText("Login de Administrador");
 
         btnLogar.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btnLogar.setText("Logar");
@@ -47,12 +45,12 @@ public class LoginGerente extends javax.swing.JFrame {
         lblUsuario.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblUsuario.setText("Usuário:");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(128, Short.MAX_VALUE)
+                .addContainerGap(136, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -69,15 +67,15 @@ public class LoginGerente extends javax.swing.JFrame {
                                 .addComponent(btnLogar)))
                         .addGap(114, 114, 114))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblLoginGerente)
-                        .addGap(149, 149, 149))))
+                        .addComponent(lblLoginAdministrador)
+                        .addGap(105, 105, 105))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(lblLoginGerente)
-                .addGap(48, 48, 48)
+                .addGap(31, 31, 31)
+                .addComponent(lblLoginAdministrador)
+                .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblUsuario, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(edtUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -89,50 +87,14 @@ public class LoginGerente extends javax.swing.JFrame {
                 .addComponent(btnLogar)
                 .addContainerGap(49, Short.MAX_VALUE))
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LoginGerente().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogar;
     private javax.swing.JTextField edtSenha;
     private javax.swing.JTextField edtUsuario;
-    private javax.swing.JLabel lblLoginGerente;
+    private javax.swing.JLabel lblLoginAdministrador;
     private javax.swing.JLabel lblSenha;
     private javax.swing.JLabel lblUsuario;
     // End of variables declaration//GEN-END:variables

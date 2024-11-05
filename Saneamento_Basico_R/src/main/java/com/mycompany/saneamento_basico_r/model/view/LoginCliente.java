@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package View;
+package com.mycompany.saneamento_basico_r.model.view;
 
 /**
  *
  * @author renan
  */
-public class LoginAdministrador extends javax.swing.JPanel {
+public class LoginCliente extends javax.swing.JPanel {
 
     /**
-     * Creates new form LoginAdministrador
+     * Creates new form LoginCliente
      */
-    public LoginAdministrador() {
+    public LoginCliente() {
         initComponents();
     }
 
@@ -26,15 +26,12 @@ public class LoginAdministrador extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblLoginAdministrador = new javax.swing.JLabel();
         btnLogar = new javax.swing.JButton();
         lblSenha = new javax.swing.JLabel();
         edtSenha = new javax.swing.JTextField();
         edtUsuario = new javax.swing.JTextField();
         lblUsuario = new javax.swing.JLabel();
-
-        lblLoginAdministrador.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblLoginAdministrador.setText("Login de Administrador");
+        lblLoginCliente = new javax.swing.JLabel();
 
         btnLogar.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btnLogar.setText("Logar");
@@ -45,37 +42,37 @@ public class LoginAdministrador extends javax.swing.JPanel {
         lblUsuario.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblUsuario.setText("Usuário:");
 
+        lblLoginCliente.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblLoginCliente.setText("Login de Cliente");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnLogar)
+                .addGap(275, 275, 275))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(136, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(135, 135, 135)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLoginCliente)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblSenha)
+                            .addComponent(lblUsuario))
+                        .addGap(2, 2, 2)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblSenha)
-                                    .addComponent(lblUsuario))
-                                .addGap(2, 2, 2)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(edtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(108, 108, 108)
-                                .addComponent(btnLogar)))
-                        .addGap(114, 114, 114))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblLoginAdministrador)
-                        .addGap(105, 105, 105))))
+                            .addComponent(edtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(197, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(lblLoginAdministrador)
-                .addGap(45, 45, 45)
+                .addContainerGap(59, Short.MAX_VALUE)
+                .addComponent(lblLoginCliente)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblUsuario, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(edtUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -83,9 +80,9 @@ public class LoginAdministrador extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSenha))
-                .addGap(41, 41, 41)
+                .addGap(30, 30, 30)
                 .addComponent(btnLogar)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addGap(61, 61, 61))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -94,7 +91,7 @@ public class LoginAdministrador extends javax.swing.JPanel {
     private javax.swing.JButton btnLogar;
     private javax.swing.JTextField edtSenha;
     private javax.swing.JTextField edtUsuario;
-    private javax.swing.JLabel lblLoginAdministrador;
+    private javax.swing.JLabel lblLoginCliente;
     private javax.swing.JLabel lblSenha;
     private javax.swing.JLabel lblUsuario;
     // End of variables declaration//GEN-END:variables

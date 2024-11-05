@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package View;
+package com.mycompany.saneamento_basico_r.model.view;
 
 /**
  *
  * @author renan
  */
-public class LoginFuncionario extends javax.swing.JFrame {
+public class LoginGerente extends javax.swing.JFrame {
 
     /**
-     * Creates new form LoginFuncionario
+     * Creates new form LoginGerente
      */
-    public LoginFuncionario() {
+    public LoginGerente() {
         initComponents();
     }
 
@@ -26,7 +26,7 @@ public class LoginFuncionario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblLoginFuncionario = new javax.swing.JLabel();
+        lblLoginGerente = new javax.swing.JLabel();
         btnLogar = new javax.swing.JButton();
         lblSenha = new javax.swing.JLabel();
         edtSenha = new javax.swing.JTextField();
@@ -35,8 +35,8 @@ public class LoginFuncionario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblLoginFuncionario.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblLoginFuncionario.setText("Login de Funcionário");
+        lblLoginGerente.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblLoginGerente.setText("Login de Gerente");
 
         btnLogar.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btnLogar.setText("Logar");
@@ -52,7 +52,7 @@ public class LoginFuncionario extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(126, Short.MAX_VALUE)
+                .addContainerGap(128, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -69,15 +69,15 @@ public class LoginFuncionario extends javax.swing.JFrame {
                                 .addComponent(btnLogar)))
                         .addGap(114, 114, 114))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblLoginFuncionario)
-                        .addGap(105, 105, 105))))
+                        .addComponent(lblLoginGerente)
+                        .addGap(149, 149, 149))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(lblLoginFuncionario)
-                .addGap(45, 45, 45)
+                .addGap(28, 28, 28)
+                .addComponent(lblLoginGerente)
+                .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblUsuario, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(edtUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -87,7 +87,7 @@ public class LoginFuncionario extends javax.swing.JFrame {
                     .addComponent(lblSenha))
                 .addGap(41, 41, 41)
                 .addComponent(btnLogar)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
@@ -110,20 +110,20 @@ public class LoginFuncionario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginFuncionario().setVisible(true);
+                new LoginGerente().setVisible(true);
             }
         });
     }
@@ -132,7 +132,7 @@ public class LoginFuncionario extends javax.swing.JFrame {
     private javax.swing.JButton btnLogar;
     private javax.swing.JTextField edtSenha;
     private javax.swing.JTextField edtUsuario;
-    private javax.swing.JLabel lblLoginFuncionario;
+    private javax.swing.JLabel lblLoginGerente;
     private javax.swing.JLabel lblSenha;
     private javax.swing.JLabel lblUsuario;
     // End of variables declaration//GEN-END:variables
