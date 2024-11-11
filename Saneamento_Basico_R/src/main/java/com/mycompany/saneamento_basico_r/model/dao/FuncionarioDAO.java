@@ -4,52 +4,50 @@
  */
 package com.mycompany.saneamento_basico_r.model.dao;
 
+
 import com.mycompany.saneamento_basico_r.factory.Persistencia;
-import com.mycompany.saneamento_basico_r.model.Cliente;
+import com.mycompany.saneamento_basico_r.model.Funcionario;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 /**
  *
  * @author JonathasOliveira
  */
-
-public class ClienteDAO implements IDao {
-
+public class FuncionarioDAO implements IDao{
     protected Connection connection;
     private PreparedStatement statement;
     private String sql;
 
-    public ClienteDAO() {
+    public FuncionarioDAO() {
         this.sql = "";
     }
 
     @Override
     public void save(Object obj) {
-        Cliente cliente = (Cliente) obj;
+        Funcionario funcionario = (Funcionario) obj;
 
-        sql = "INSERT INTO cliente(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora) "
+        sql = "INSERT INTO funcionario(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora) "
                 + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             connection = Persistencia.getConnection();
             statement = connection.prepareStatement(sql);
 
-            statement.setString(1, cliente.getNome());
-            statement.setString(2, String.valueOf(cliente.getSexo()));
-            statement.setInt(3, cliente.getIdade());
-            statement.setString(4,cliente.getCpf());
-            statement.setString(5, cliente.getDataNascimento());
-            statement.setString(6, cliente.getEndereco());
-            statement.setString(7, cliente.getEmail());
-            statement.setString(8, cliente.getSenha());
-            statement.setString(9, cliente.getTelefone());
-            statement.setString(10, cliente.getCidade());
-            statement.setString(11, cliente.getBairro());
-            statement.setString(12, cliente.getUnidadeConsumidora());
+            statement.setString(1, funcionario.getNome());
+            statement.setString(2, String.valueOf(funcionario.getSexo()));
+            statement.setInt(3, funcionario.getIdade());
+            statement.setString(4,funcionario.getCpf());
+            statement.setString(5, funcionario.getDataNascimento());
+            statement.setString(6, funcionario.getEndereco());
+            statement.setString(7, funcionario.getEmail());
+            statement.setString(8, funcionario.getSenha());
+            statement.setString(9, funcionario.getTelefone());
+            statement.setString(10, funcionario.getCidade());
+            statement.setString(11, funcionario.getBairro());
+            statement.setString(12, funcionario.getUnidadeConsumidora());
 
             statement.execute();
             statement.close();
@@ -62,29 +60,29 @@ public class ClienteDAO implements IDao {
 
     
     public void update(Object obj) {
-        Cliente cliente = (Cliente) obj;
+        Funcionario funcionario = (Funcionario) obj;
 
-        sql = "UPDATE cliente "
+        sql = "UPDATE funcionario "
                 + "SET nome=?, sexo=?, idade=?, cpf=?, dataNascimento=?, endereco=?, email=?, senha=?, telefone=? , cidade=?, bairro=?, unidadeConsumidora=?"
                 + "WHERE id = ?";
         try {
             connection = Persistencia.getConnection();
             statement = connection.prepareStatement(sql);
 
-            statement.setString(1, cliente.getNome());
-            statement.setString(2, String.valueOf(cliente.getSexo()));
-            statement.setInt(3, cliente.getIdade());
-            statement.setString(4,cliente.getCpf());
-            statement.setString(5, cliente.getDataNascimento());
-            statement.setString(6, cliente.getEndereco());
-            statement.setString(7, cliente.getEmail());
-            statement.setString(8, cliente.getSenha());
-            statement.setString(9, cliente.getTelefone());
-            statement.setString(10, cliente.getCidade());
-            statement.setString(11, cliente.getBairro());
-            statement.setString(12, cliente.getUnidadeConsumidora());
+            statement.setString(1, funcionario.getNome());
+            statement.setString(2, String.valueOf(funcionario.getSexo()));
+            statement.setInt(3, funcionario.getIdade());
+            statement.setString(4,funcionario.getCpf());
+            statement.setString(5, funcionario.getDataNascimento());
+            statement.setString(6, funcionario.getEndereco());
+            statement.setString(7, funcionario.getEmail());
+            statement.setString(8, funcionario.getSenha());
+            statement.setString(9, funcionario.getTelefone());
+            statement.setString(10, funcionario.getCidade());
+            statement.setString(11, funcionario.getBairro());
+            statement.setString(12, funcionario.getUnidadeConsumidora());
 
-            statement.setInt(13, cliente.getId());
+            statement.setInt(13, funcionario.getId());
 
             statement.execute();
             statement.close();
@@ -99,12 +97,12 @@ public class ClienteDAO implements IDao {
     public List<Object> findAll() {
         List<Object> list = new ArrayList<>();
 
-        sql = "SELECT * FROM cliente ORDER BY upper(nome)";
+        sql = "SELECT * FROM funcionario ORDER BY upper(nome)";
         try {
             statement = Persistencia.getConnection().prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                Cliente cliente = new Cliente(
+                Funcionario funcionario = new Funcionario(
                         resultSet.getInt("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("sexo"),
@@ -120,7 +118,7 @@ public class ClienteDAO implements IDao {
                         resultSet.getString("unidadeConsumidora")
                 );
 
-                list.add(cliente);
+                list.add(funcionario);
             }
             statement.close();
         } catch (SQLException ex) {
@@ -134,18 +132,18 @@ public class ClienteDAO implements IDao {
 
     @Override
     public Object find(Object obj) {
-        Cliente cliente = (Cliente) obj;
+        Funcionario funcionario = (Funcionario) obj;
 
-        sql = "SELECT * FROM cliente WHERE id = ?";
+        sql = "SELECT * FROM funcionario WHERE id = ?";
         try {
             statement = Persistencia.getConnection().prepareStatement(sql);
-            statement.setInt(1, cliente.getId());
+            statement.setInt(1, funcionario.getId());
 
             ResultSet resultSet = statement.executeQuery();
 
-            Cliente foundCliente = null;
+            Funcionario foundFuncionario = null;
             while (resultSet.next()) {
-                foundCliente = new Cliente(
+                foundFuncionario = new Funcionario(
                         resultSet.getInt("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("sexo"),
@@ -162,7 +160,7 @@ public class ClienteDAO implements IDao {
                 );
             }
             statement.close();
-            return foundCliente;
+            return foundFuncionario;
         } catch (SQLException u) {
             throw new RuntimeException(u);
         } finally {
@@ -171,9 +169,9 @@ public class ClienteDAO implements IDao {
     }
 
     public Object findByEndereco(String email) {
-        sql = "SELECT * FROM cliente WHERE endereco = ?";
+        sql = "SELECT * FROM funcionario WHERE endereco = ?";
 
-        Cliente cliente = null;
+        Funcionario funcionario = null;
         try {
             connection = Persistencia.getConnection();
             statement = connection.prepareStatement(sql);
@@ -181,7 +179,7 @@ public class ClienteDAO implements IDao {
 
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                cliente = new Cliente(
+                funcionario = new Funcionario(
                         resultSet.getInt("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("sexo"),
@@ -203,18 +201,18 @@ public class ClienteDAO implements IDao {
         } finally {
             Persistencia.closeConnection();
         }
-        return cliente;
+        return funcionario;
     }
 
     @Override
     public boolean delete(Object obj) {
-        Cliente cliente = (Cliente) obj;
+        Funcionario funcionario = (Funcionario) obj;
 
-        sql = "DELETE FROM cliente WHERE id = ?";
+        sql = "DELETE FROM funcionario WHERE id = ?";
         try {
             connection = Persistencia.getConnection();
             statement = connection.prepareStatement(sql);
-            statement.setLong(1, cliente.getId());
+            statement.setLong(1, funcionario.getId());
 
             statement.execute();
             statement.close();
@@ -226,4 +224,3 @@ public class ClienteDAO implements IDao {
         }
     }
 }
-

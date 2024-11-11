@@ -133,6 +133,19 @@ public class Pessoa {
         this.idade = idade;
     }
     
+    /**
+     * @return the cpf
+     */
+    public String getCpf() {
+        return cpf;
+    }
+
+    /**
+     * @param cpf the cpf to set
+     */
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
     
     /**
      * @return the dataNascimento
@@ -246,18 +259,6 @@ public class Pessoa {
         this.unidadeConsumidora = unidadeConsumidora;
     }
 
-    /**
-     * @return the cpf
-     */
-    public String getCpf() {
-        return cpf;
-    }
-
-    /**
-     * @param cpf the cpf to set
-     */
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
+    
            
 }

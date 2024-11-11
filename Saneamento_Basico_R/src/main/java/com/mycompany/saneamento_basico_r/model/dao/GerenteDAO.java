@@ -5,7 +5,7 @@
 package com.mycompany.saneamento_basico_r.model.dao;
 
 import com.mycompany.saneamento_basico_r.factory.Persistencia;
-import com.mycompany.saneamento_basico_r.model.Cliente;
+import com.mycompany.saneamento_basico_r.model.Gerente;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.Connection;
@@ -18,38 +18,37 @@ import java.sql.SQLException;
  * @author JonathasOliveira
  */
 
-public class ClienteDAO implements IDao {
-
+public class GerenteDAO implements IDao{
     protected Connection connection;
     private PreparedStatement statement;
     private String sql;
 
-    public ClienteDAO() {
+    public GerenteDAO() {
         this.sql = "";
     }
 
     @Override
     public void save(Object obj) {
-        Cliente cliente = (Cliente) obj;
+        Gerente gerente = (Gerente) obj;
 
-        sql = "INSERT INTO cliente(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora) "
+        sql = "INSERT INTO gerente(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora) "
                 + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             connection = Persistencia.getConnection();
             statement = connection.prepareStatement(sql);
 
-            statement.setString(1, cliente.getNome());
-            statement.setString(2, String.valueOf(cliente.getSexo()));
-            statement.setInt(3, cliente.getIdade());
-            statement.setString(4,cliente.getCpf());
-            statement.setString(5, cliente.getDataNascimento());
-            statement.setString(6, cliente.getEndereco());
-            statement.setString(7, cliente.getEmail());
-            statement.setString(8, cliente.getSenha());
-            statement.setString(9, cliente.getTelefone());
-            statement.setString(10, cliente.getCidade());
-            statement.setString(11, cliente.getBairro());
-            statement.setString(12, cliente.getUnidadeConsumidora());
+            statement.setString(1, gerente.getNome());
+            statement.setString(2, String.valueOf(gerente.getSexo()));
+            statement.setInt(3, gerente.getIdade());
+            statement.setString(4,gerente.getCpf());
+            statement.setString(5, gerente.getDataNascimento());
+            statement.setString(6, gerente.getEndereco());
+            statement.setString(7, gerente.getEmail());
+            statement.setString(8, gerente.getSenha());
+            statement.setString(9, gerente.getTelefone());
+            statement.setString(10, gerente.getCidade());
+            statement.setString(11, gerente.getBairro());
+            statement.setString(12, gerente.getUnidadeConsumidora());
 
             statement.execute();
             statement.close();
@@ -62,29 +61,29 @@ public class ClienteDAO implements IDao {
 
     
     public void update(Object obj) {
-        Cliente cliente = (Cliente) obj;
+        Gerente gerente = (Gerente) obj;
 
-        sql = "UPDATE cliente "
+        sql = "UPDATE gerente "
                 + "SET nome=?, sexo=?, idade=?, cpf=?, dataNascimento=?, endereco=?, email=?, senha=?, telefone=? , cidade=?, bairro=?, unidadeConsumidora=?"
                 + "WHERE id = ?";
         try {
             connection = Persistencia.getConnection();
             statement = connection.prepareStatement(sql);
 
-            statement.setString(1, cliente.getNome());
-            statement.setString(2, String.valueOf(cliente.getSexo()));
-            statement.setInt(3, cliente.getIdade());
-            statement.setString(4,cliente.getCpf());
-            statement.setString(5, cliente.getDataNascimento());
-            statement.setString(6, cliente.getEndereco());
-            statement.setString(7, cliente.getEmail());
-            statement.setString(8, cliente.getSenha());
-            statement.setString(9, cliente.getTelefone());
-            statement.setString(10, cliente.getCidade());
-            statement.setString(11, cliente.getBairro());
-            statement.setString(12, cliente.getUnidadeConsumidora());
+            statement.setString(1, gerente.getNome());
+            statement.setString(2, String.valueOf(gerente.getSexo()));
+            statement.setInt(3, gerente.getIdade());
+            statement.setString(4,gerente.getCpf());
+            statement.setString(5, gerente.getDataNascimento());
+            statement.setString(6, gerente.getEndereco());
+            statement.setString(7, gerente.getEmail());
+            statement.setString(8, gerente.getSenha());
+            statement.setString(9, gerente.getTelefone());
+            statement.setString(10, gerente.getCidade());
+            statement.setString(11, gerente.getBairro());
+            statement.setString(12, gerente.getUnidadeConsumidora());
 
-            statement.setInt(13, cliente.getId());
+            statement.setInt(13, gerente.getId());
 
             statement.execute();
             statement.close();
@@ -99,12 +98,12 @@ public class ClienteDAO implements IDao {
     public List<Object> findAll() {
         List<Object> list = new ArrayList<>();
 
-        sql = "SELECT * FROM cliente ORDER BY upper(nome)";
+        sql = "SELECT * FROM gerente ORDER BY upper(nome)";
         try {
             statement = Persistencia.getConnection().prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                Cliente cliente = new Cliente(
+                Gerente gerente = new Gerente(
                         resultSet.getInt("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("sexo"),
@@ -120,7 +119,7 @@ public class ClienteDAO implements IDao {
                         resultSet.getString("unidadeConsumidora")
                 );
 
-                list.add(cliente);
+                list.add(gerente);
             }
             statement.close();
         } catch (SQLException ex) {
@@ -134,18 +133,18 @@ public class ClienteDAO implements IDao {
 
     @Override
     public Object find(Object obj) {
-        Cliente cliente = (Cliente) obj;
+        Gerente gerente = (Gerente) obj;
 
-        sql = "SELECT * FROM cliente WHERE id = ?";
+        sql = "SELECT * FROM gerente WHERE id = ?";
         try {
             statement = Persistencia.getConnection().prepareStatement(sql);
-            statement.setInt(1, cliente.getId());
+            statement.setInt(1, gerente.getId());
 
             ResultSet resultSet = statement.executeQuery();
 
-            Cliente foundCliente = null;
+            Gerente foundGerente = null;
             while (resultSet.next()) {
-                foundCliente = new Cliente(
+                foundGerente = new Gerente(
                         resultSet.getInt("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("sexo"),
@@ -162,7 +161,7 @@ public class ClienteDAO implements IDao {
                 );
             }
             statement.close();
-            return foundCliente;
+            return foundGerente;
         } catch (SQLException u) {
             throw new RuntimeException(u);
         } finally {
@@ -171,9 +170,9 @@ public class ClienteDAO implements IDao {
     }
 
     public Object findByEndereco(String email) {
-        sql = "SELECT * FROM cliente WHERE endereco = ?";
+        sql = "SELECT * FROM gerente WHERE endereco = ?";
 
-        Cliente cliente = null;
+        Gerente gerente = null;
         try {
             connection = Persistencia.getConnection();
             statement = connection.prepareStatement(sql);
@@ -181,7 +180,7 @@ public class ClienteDAO implements IDao {
 
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                cliente = new Cliente(
+                gerente = new Gerente(
                         resultSet.getInt("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("sexo"),
@@ -203,18 +202,18 @@ public class ClienteDAO implements IDao {
         } finally {
             Persistencia.closeConnection();
         }
-        return cliente;
+        return gerente;
     }
 
     @Override
     public boolean delete(Object obj) {
-        Cliente cliente = (Cliente) obj;
+        Gerente gerente = (Gerente) obj;
 
-        sql = "DELETE FROM cliente WHERE id = ?";
+        sql = "DELETE FROM gerente WHERE id = ?";
         try {
             connection = Persistencia.getConnection();
             statement = connection.prepareStatement(sql);
-            statement.setLong(1, cliente.getId());
+            statement.setLong(1, gerente.getId());
 
             statement.execute();
             statement.close();
@@ -226,4 +225,3 @@ public class ClienteDAO implements IDao {
         }
     }
 }
-
