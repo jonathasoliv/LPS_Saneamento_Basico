@@ -5,7 +5,7 @@
 package com.mycompany.saneamento_basico_r.model.dao;
 
 import com.mycompany.saneamento_basico_r.factory.Persistencia;
-import com.mycompany.saneamento_basico_r.model.Cliente;
+import com.mycompany.saneamento_basico_r.model.entities.Cliente;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.Connection;

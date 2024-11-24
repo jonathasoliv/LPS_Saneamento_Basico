@@ -2,27 +2,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.saneamento_basico_r.model;
+package com.mycompany.saneamento_basico_r.model.entities;
 
 /**
  *
  * @author JonathasOliveira
  */
-public class Gerente extends Pessoa {
+public class Administrador extends Pessoa{
     private int id;
 
-    public Gerente() {
+    public Administrador() {
         super();
         
     }
     
-    public Gerente(int id, String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {
+    public Administrador(int id, String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {
         super(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora);
         this.id = id;
         
     }
     
-    public void copiar(Gerente outro) {
+    public void copiar(Administrador outro) {
         this.setId(outro.getId());
         this.nome = outro.getNome();
         this.sexo = outro.getSexo();
@@ -44,4 +44,5 @@ public class Gerente extends Pessoa {
     public void setId(int id) {
         this.id = id;
     }
+
 }

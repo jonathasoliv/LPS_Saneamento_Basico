@@ -2,27 +2,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.saneamento_basico_r.model;
+package com.mycompany.saneamento_basico_r.model.entities;
+
+import com.mycompany.saneamento_basico_r.model.entities.Pessoa;
 
 /**
  *
  * @author JonathasOliveira
  */
-public class Cliente extends Pessoa{
+public class Funcionario extends Pessoa{
     private int id;
 
-    public Cliente() {
+    public Funcionario() {
         super();
         
     }
     
-    public Cliente(int id, String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {
+    public Funcionario(int id, String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {
         super(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora);
         this.id = id;
         
     }
     
-    public void copiar(Cliente outro) {
+    public void copiar(Funcionario outro) {
         this.setId(outro.getId());
         this.nome = outro.getNome();
         this.sexo = outro.getSexo();
@@ -45,5 +47,4 @@ public class Cliente extends Pessoa{
         this.id = id;
     }
 
-    
 }

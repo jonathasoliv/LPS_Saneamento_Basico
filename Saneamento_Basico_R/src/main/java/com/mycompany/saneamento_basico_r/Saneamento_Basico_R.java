@@ -4,6 +4,8 @@
 
 package com.mycompany.saneamento_basico_r;
 
+import com.mycompany.saneamento_basico_r.model.view.Menu;
+
 /**
  *
  * @author renan
@@ -11,6 +13,7 @@ package com.mycompany.saneamento_basico_r;
 public class Saneamento_Basico_R {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Menu telaMenu = new Menu(); //decido quem aparece primeiro
+        telaMenu.setVisible(true);
     }
 }
