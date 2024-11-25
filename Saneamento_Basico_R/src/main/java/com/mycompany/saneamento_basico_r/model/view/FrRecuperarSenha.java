@@ -16,12 +16,12 @@ import javax.swing.text.MaskFormatter;
  *
  * @author joserui
  */
-public class FrAdministrador extends javax.swing.JDialog {
+public class FrRecuperarSenha extends javax.swing.JDialog {
 
     ClienteController clienteController;
     Long idClienteEditando;
 
-    public FrAdministrador(java.awt.Frame parent, boolean modal) {
+    public FrRecuperarSenha(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
         
         clienteController = new ClienteController();
@@ -53,9 +53,9 @@ public class FrAdministrador extends javax.swing.JDialog {
         try {
             // Precisa começar com uma letra, depois pode ser letra ou numero
             MaskFormatter maskUsuario = new MaskFormatter("?AAAAAAAAAAAAAAAAAAA");
-            maskUsuario.install(fAdministradorUsuario);                                    
+            maskUsuario.install(fUsuario);                                    
         } catch (ParseException ex) {
-            Logger.getLogger(FrAdministrador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FrRecuperarSenha.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -86,91 +86,102 @@ public class FrAdministrador extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblLoginAdministrador = new javax.swing.JLabel();
-        lblAdministradorUsuario = new javax.swing.JLabel();
-        fAdministradorUsuario = new javax.swing.JFormattedTextField();
-        lblAdministradorSenha = new javax.swing.JLabel();
-        fAdministradorSenha = new javax.swing.JFormattedTextField();
-        btnUsuarioLogin = new javax.swing.JButton();
+        lblRecuperarSenha = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
+        fUsuario = new javax.swing.JFormattedTextField();
+        fEmail = new javax.swing.JLabel();
+        fRecuperarSenha = new javax.swing.JFormattedTextField();
+        btnEnviarEmail = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Alunos");
 
-        lblLoginAdministrador.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        lblLoginAdministrador.setText("Login Administrador");
+        lblRecuperarSenha.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblRecuperarSenha.setText("Recuperar Senha");
 
-        lblAdministradorUsuario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        lblAdministradorUsuario.setText("Usuário:");
+        lblUsuario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblUsuario.setText("Usuário:");
 
-        fAdministradorUsuario.addActionListener(new java.awt.event.ActionListener() {
+        fUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fAdministradorUsuarioActionPerformed(evt);
+                fUsuarioActionPerformed(evt);
             }
         });
 
-        lblAdministradorSenha.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        lblAdministradorSenha.setText("Senha:");
+        fEmail.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        fEmail.setText("E-mail");
 
-        fAdministradorSenha.addActionListener(new java.awt.event.ActionListener() {
+        fRecuperarSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fAdministradorSenhaActionPerformed(evt);
+                fRecuperarSenhaActionPerformed(evt);
             }
         });
 
-        btnUsuarioLogin.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        btnUsuarioLogin.setText("Login");
+        btnEnviarEmail.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnEnviarEmail.setText("Enviar E-mail de Recuperação");
+        btnEnviarEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnviarEmailActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblRecuperarSenha)
+                        .addGap(256, 256, 256))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnEnviarEmail)
+                        .addGap(211, 211, 211))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(139, 139, 139)
+                .addGap(151, 151, 151)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblAdministradorUsuario)
-                    .addComponent(lblAdministradorSenha))
+                    .addComponent(lblUsuario)
+                    .addComponent(fEmail))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addComponent(btnUsuarioLogin))
-                    .addComponent(fAdministradorUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fAdministradorSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(191, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(246, Short.MAX_VALUE)
-                .addComponent(lblLoginAdministrador)
-                .addGap(256, 256, 256))
+                    .addComponent(fUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fRecuperarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 179, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addComponent(lblLoginAdministrador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addComponent(lblRecuperarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAdministradorUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fAdministradorUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAdministradorSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fAdministradorSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnUsuarioLogin)
-                .addContainerGap(122, Short.MAX_VALUE))
+                    .addComponent(fEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fRecuperarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46)
+                .addComponent(btnEnviarEmail)
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void fAdministradorUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fAdministradorUsuarioActionPerformed
+    private void fUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_fAdministradorUsuarioActionPerformed
+    }//GEN-LAST:event_fUsuarioActionPerformed
 
-    private void fAdministradorSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fAdministradorSenhaActionPerformed
+    private void fRecuperarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fRecuperarSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_fAdministradorSenhaActionPerformed
+    }//GEN-LAST:event_fRecuperarSenhaActionPerformed
+
+    private void btnEnviarEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEnviarEmailActionPerformed
 
     /**
      * Retorna o objeto (classe) da linha selecionada na grid.
@@ -190,11 +201,11 @@ public class FrAdministrador extends javax.swing.JDialog {
     }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnUsuarioLogin;
-    private javax.swing.JFormattedTextField fAdministradorSenha;
-    private javax.swing.JFormattedTextField fAdministradorUsuario;
-    private javax.swing.JLabel lblAdministradorSenha;
-    private javax.swing.JLabel lblAdministradorUsuario;
-    private javax.swing.JLabel lblLoginAdministrador;
+    private javax.swing.JButton btnEnviarEmail;
+    private javax.swing.JLabel fEmail;
+    private javax.swing.JFormattedTextField fRecuperarSenha;
+    private javax.swing.JFormattedTextField fUsuario;
+    private javax.swing.JLabel lblRecuperarSenha;
+    private javax.swing.JLabel lblUsuario;
     // End of variables declaration//GEN-END:variables
 }

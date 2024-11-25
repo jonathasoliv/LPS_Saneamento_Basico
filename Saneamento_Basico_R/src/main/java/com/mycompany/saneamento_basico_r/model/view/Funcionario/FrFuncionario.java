@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.saneamento_basico_r.model.view;
+package com.mycompany.saneamento_basico_r.model.view.Funcionario;
 
 import com.mycompany.saneamento_basico_r.controller.ClienteController;
+import com.mycompany.saneamento_basico_r.model.view.FrRecuperarSenha;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,7 +22,7 @@ public class FrFuncionario extends javax.swing.JDialog {
     ClienteController clienteController;
     Long idClienteEditando;
 
-    public FrFuncionario(java.awt.Frame parent, boolean modal) {
+    public FrFuncionario(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
         
         clienteController = new ClienteController();
@@ -94,6 +95,7 @@ public class FrFuncionario extends javax.swing.JDialog {
         btnUsuarioLogin = new javax.swing.JButton();
         lblFuncionarioRegistrar = new javax.swing.JLabel();
         btnUsuarioRegistrar = new javax.swing.JButton();
+        btnSenhaEsqueci = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Alunos");
@@ -121,6 +123,11 @@ public class FrFuncionario extends javax.swing.JDialog {
 
         btnUsuarioLogin.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         btnUsuarioLogin.setText("Login");
+        btnUsuarioLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuarioLoginActionPerformed(evt);
+            }
+        });
 
         lblFuncionarioRegistrar.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         lblFuncionarioRegistrar.setText("Não tem uma conta? Faça seu registro clicando no botão:");
@@ -130,6 +137,14 @@ public class FrFuncionario extends javax.swing.JDialog {
         btnUsuarioRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUsuarioRegistrarActionPerformed(evt);
+            }
+        });
+
+        btnSenhaEsqueci.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        btnSenhaEsqueci.setText("Esqueci a senha");
+        btnSenhaEsqueci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSenhaEsqueciActionPerformed(evt);
             }
         });
 
@@ -148,8 +163,11 @@ public class FrFuncionario extends javax.swing.JDialog {
                         .addGap(127, 127, 127)
                         .addComponent(btnUsuarioLogin))
                     .addComponent(fFuncionarioUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fFuncionarioSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(191, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(fFuncionarioSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSenhaEsqueci)))
+                .addContainerGap(71, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,7 +194,8 @@ public class FrFuncionario extends javax.swing.JDialog {
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFuncionarioSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fFuncionarioSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fFuncionarioSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSenhaEsqueci))
                 .addGap(18, 18, 18)
                 .addComponent(btnUsuarioLogin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
@@ -191,7 +210,10 @@ public class FrFuncionario extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUsuarioRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioRegistrarActionPerformed
-        // TODO add your handling code here:
+        FrFuncionarioCadastro dlgRegistrarFuncionario = new FrFuncionarioCadastro(this, true);
+        
+        dlgRegistrarFuncionario.setLocationRelativeTo(this);
+        dlgRegistrarFuncionario.setVisible(true);
     }//GEN-LAST:event_btnUsuarioRegistrarActionPerformed
 
     private void fFuncionarioUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fFuncionarioUsuarioActionPerformed
@@ -201,6 +223,21 @@ public class FrFuncionario extends javax.swing.JDialog {
     private void fFuncionarioSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fFuncionarioSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fFuncionarioSenhaActionPerformed
+
+    private void btnSenhaEsqueciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSenhaEsqueciActionPerformed
+        FrRecuperarSenha dlgRecuperarSenha = new FrRecuperarSenha(this, true);
+        
+        dlgRecuperarSenha.setLocationRelativeTo(this);
+        dlgRecuperarSenha.setVisible(true);
+    }//GEN-LAST:event_btnSenhaEsqueciActionPerformed
+
+    private void btnUsuarioLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioLoginActionPerformed
+        FrFuncionarioFuncoes dlgFuncoes = new FrFuncionarioFuncoes(this, true);
+        
+        dlgFuncoes.setLocationRelativeTo(this);
+        dlgFuncoes.setVisible(true);
+        
+    }//GEN-LAST:event_btnUsuarioLoginActionPerformed
 
     /**
      * Retorna o objeto (classe) da linha selecionada na grid.
@@ -220,6 +257,7 @@ public class FrFuncionario extends javax.swing.JDialog {
     }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSenhaEsqueci;
     private javax.swing.JButton btnUsuarioLogin;
     private javax.swing.JButton btnUsuarioRegistrar;
     private javax.swing.JFormattedTextField fFuncionarioSenha;

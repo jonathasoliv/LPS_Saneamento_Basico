@@ -24,11 +24,11 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="lblFuncionarioUsuario" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblFuncionarioSenha" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblClienteUsuario" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblClienteSenha" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -36,27 +36,29 @@
                       <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
                       <Component id="btnUsuarioLogin" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="fFuncionarioUsuario" alignment="0" min="-2" pref="330" max="-2" attributes="0"/>
-                  <Component id="fFuncionarioSenha" min="-2" pref="330" max="-2" attributes="0"/>
+                  <Component id="fClienteUsuario" alignment="0" min="-2" pref="330" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="fClienteSenha" min="-2" pref="330" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnSenhaEsqueci" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="191" max="32767" attributes="0"/>
+              <EmptySpace pref="71" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="btnUsuarioRegistrar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="lblFuncionarioRegistrar" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="lblLoginCliente" min="-2" pref="160" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="287" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="lblClienteRegistrar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="214" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="lblLoginFuncionario" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="256" max="-2" attributes="0"/>
+                      <Component id="btnUsuarioRegistrar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="306" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -65,22 +67,23 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-              <Component id="lblLoginFuncionario" min="-2" pref="45" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Component id="lblLoginCliente" min="-2" pref="45" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblFuncionarioUsuario" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                  <Component id="fFuncionarioUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblClienteUsuario" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="fClienteUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblFuncionarioSenha" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                  <Component id="fFuncionarioSenha" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblClienteSenha" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="fClienteSenha" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSenhaEsqueci" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnUsuarioLogin" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="42" max="32767" attributes="0"/>
-              <Component id="lblFuncionarioRegistrar" min="-2" max="-2" attributes="0"/>
+              <Component id="lblClienteRegistrar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="btnUsuarioRegistrar" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
@@ -89,15 +92,15 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="lblLoginFuncionario">
+    <Component class="javax.swing.JLabel" name="lblLoginCliente">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Login Funcionario"/>
+        <Property name="text" type="java.lang.String" value="Login Cliente"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblFuncionarioUsuario">
+    <Component class="javax.swing.JLabel" name="lblClienteUsuario">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="18" style="0"/>
@@ -105,12 +108,12 @@
         <Property name="text" type="java.lang.String" value="Usu&#xe1;rio:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="fFuncionarioUsuario">
+    <Component class="javax.swing.JFormattedTextField" name="fClienteUsuario">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fFuncionarioUsuarioActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fClienteUsuarioActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblFuncionarioSenha">
+    <Component class="javax.swing.JLabel" name="lblClienteSenha">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="18" style="0"/>
@@ -118,9 +121,9 @@
         <Property name="text" type="java.lang.String" value="Senha:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="fFuncionarioSenha">
+    <Component class="javax.swing.JFormattedTextField" name="fClienteSenha">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fFuncionarioSenhaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fClienteSenhaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnUsuarioLogin">
@@ -130,8 +133,11 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Login"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUsuarioLoginActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblFuncionarioRegistrar">
+    <Component class="javax.swing.JLabel" name="lblClienteRegistrar">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="10" style="0"/>
@@ -148,6 +154,17 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUsuarioRegistrarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSenhaEsqueci">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="10" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Esqueci a senha"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSenhaEsqueciActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.saneamento_basico_r.model.view;
+package com.mycompany.saneamento_basico_r.model.view.Cliente;
 
+import com.mycompany.saneamento_basico_r.model.view.Cliente.FrClienteCadastro;
 import com.mycompany.saneamento_basico_r.controller.ClienteController;
+import com.mycompany.saneamento_basico_r.model.view.FrRecuperarSenha;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,12 +18,12 @@ import javax.swing.text.MaskFormatter;
  *
  * @author joserui
  */
-public class FrGerente extends javax.swing.JDialog {
+public class FrCliente extends javax.swing.JDialog {
 
     ClienteController clienteController;
     Long idClienteEditando;
 
-    public FrGerente(java.awt.Frame parent, boolean modal) {
+    public FrCliente(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
         
         clienteController = new ClienteController();
@@ -47,7 +49,7 @@ public class FrGerente extends javax.swing.JDialog {
         edtSexo.setText("");
         edtIdade.setText("");
         fEdtMatricula.setText("");
-    }*/
+    }*/ 
 
     public void adicionarMascaraNosCampos() {
         try {
@@ -55,7 +57,7 @@ public class FrGerente extends javax.swing.JDialog {
             MaskFormatter maskUsuario = new MaskFormatter("?AAAAAAAAAAAAAAAAAAA");
             maskUsuario.install(fClienteUsuario);                                    
         } catch (ParseException ex) {
-            Logger.getLogger(FrGerente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FrCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -86,21 +88,24 @@ public class FrGerente extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblLoginGerente = new javax.swing.JLabel();
-        lblGerenteUsuario = new javax.swing.JLabel();
+        lblLoginCliente = new javax.swing.JLabel();
+        lblClienteUsuario = new javax.swing.JLabel();
         fClienteUsuario = new javax.swing.JFormattedTextField();
-        lblGerenteSenha = new javax.swing.JLabel();
-        fAdministradorSenha = new javax.swing.JFormattedTextField();
+        lblClienteSenha = new javax.swing.JLabel();
+        fClienteSenha = new javax.swing.JFormattedTextField();
         btnUsuarioLogin = new javax.swing.JButton();
+        lblClienteRegistrar = new javax.swing.JLabel();
+        btnUsuarioRegistrar = new javax.swing.JButton();
+        btnSenhaEsqueci = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Alunos");
 
-        lblLoginGerente.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        lblLoginGerente.setText("Login Gerente");
+        lblLoginCliente.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblLoginCliente.setText("Login Cliente");
 
-        lblGerenteUsuario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        lblGerenteUsuario.setText("Usuário:");
+        lblClienteUsuario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblClienteUsuario.setText("Usuário:");
 
         fClienteUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,12 +113,12 @@ public class FrGerente extends javax.swing.JDialog {
             }
         });
 
-        lblGerenteSenha.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        lblGerenteSenha.setText("Senha:");
+        lblClienteSenha.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblClienteSenha.setText("Senha:");
 
-        fAdministradorSenha.addActionListener(new java.awt.event.ActionListener() {
+        fClienteSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fAdministradorSenhaActionPerformed(evt);
+                fClienteSenhaActionPerformed(evt);
             }
         });
 
@@ -125,6 +130,25 @@ public class FrGerente extends javax.swing.JDialog {
             }
         });
 
+        lblClienteRegistrar.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        lblClienteRegistrar.setText("Não tem uma conta? Faça seu registro clicando no botão:");
+
+        btnUsuarioRegistrar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnUsuarioRegistrar.setText("Registrar");
+        btnUsuarioRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuarioRegistrarActionPerformed(evt);
+            }
+        });
+
+        btnSenhaEsqueci.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        btnSenhaEsqueci.setText("Esqueci a senha");
+        btnSenhaEsqueci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSenhaEsqueciActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -132,54 +156,88 @@ public class FrGerente extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(139, 139, 139)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblGerenteUsuario)
-                    .addComponent(lblGerenteSenha))
+                    .addComponent(lblClienteUsuario)
+                    .addComponent(lblClienteSenha))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(127, 127, 127)
                         .addComponent(btnUsuarioLogin))
                     .addComponent(fClienteUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fAdministradorSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(191, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(fClienteSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSenhaEsqueci)))
+                .addContainerGap(71, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(317, Short.MAX_VALUE)
-                .addComponent(lblLoginGerente)
-                .addGap(256, 256, 256))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblLoginCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(287, 287, 287))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblClienteRegistrar)
+                        .addGap(214, 214, 214))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnUsuarioRegistrar)
+                        .addGap(306, 306, 306))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(lblLoginGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(32, 32, 32)
+                .addComponent(lblLoginCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblGerenteUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblClienteUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fClienteUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblGerenteSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fAdministradorSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblClienteSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fClienteSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSenhaEsqueci))
                 .addGap(18, 18, 18)
                 .addComponent(btnUsuarioLogin)
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(lblClienteRegistrar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnUsuarioRegistrar)
+                .addGap(29, 29, 29))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnUsuarioRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioRegistrarActionPerformed
+        FrClienteCadastro dlgRegistrarCliente = new FrClienteCadastro(this, true);
+        
+        dlgRegistrarCliente.setLocationRelativeTo(this);
+        dlgRegistrarCliente.setVisible(true);
+    }//GEN-LAST:event_btnUsuarioRegistrarActionPerformed
+
     private void fClienteUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fClienteUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fClienteUsuarioActionPerformed
 
-    private void fAdministradorSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fAdministradorSenhaActionPerformed
+    private void fClienteSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fClienteSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_fAdministradorSenhaActionPerformed
+    }//GEN-LAST:event_fClienteSenhaActionPerformed
 
     private void btnUsuarioLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioLoginActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        FrClienteFuncoes dlgFuncoesCliente = new FrClienteFuncoes(this, true);
+        
+        dlgFuncoesCliente.setLocationRelativeTo(this);
+        dlgFuncoesCliente.setVisible(true);
     }//GEN-LAST:event_btnUsuarioLoginActionPerformed
+
+    private void btnSenhaEsqueciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSenhaEsqueciActionPerformed
+        FrRecuperarSenha dlgRecuperarSenha = new FrRecuperarSenha(this, true);
+        
+        dlgRecuperarSenha.setLocationRelativeTo(this);
+        dlgRecuperarSenha.setVisible(true);
+    }//GEN-LAST:event_btnSenhaEsqueciActionPerformed
 
     /**
      * Retorna o objeto (classe) da linha selecionada na grid.
@@ -199,11 +257,14 @@ public class FrGerente extends javax.swing.JDialog {
     }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSenhaEsqueci;
     private javax.swing.JButton btnUsuarioLogin;
-    private javax.swing.JFormattedTextField fAdministradorSenha;
+    private javax.swing.JButton btnUsuarioRegistrar;
+    private javax.swing.JFormattedTextField fClienteSenha;
     private javax.swing.JFormattedTextField fClienteUsuario;
-    private javax.swing.JLabel lblGerenteSenha;
-    private javax.swing.JLabel lblGerenteUsuario;
-    private javax.swing.JLabel lblLoginGerente;
+    private javax.swing.JLabel lblClienteRegistrar;
+    private javax.swing.JLabel lblClienteSenha;
+    private javax.swing.JLabel lblClienteUsuario;
+    private javax.swing.JLabel lblLoginCliente;
     // End of variables declaration//GEN-END:variables
 }

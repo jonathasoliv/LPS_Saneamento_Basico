@@ -1,27 +1,26 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package com.mycompany.saneamento_basico_r.model.view;
 
-import javax.swing.JOptionPane;
+import com.mycompany.saneamento_basico_r.model.view.Gerente.FrGerente;
+import com.mycompany.saneamento_basico_r.model.view.Planos.FrPlanos;
+import com.mycompany.saneamento_basico_r.model.view.Funcionario.FrFuncionario;
+import com.mycompany.saneamento_basico_r.model.view.Adminisctrador.FrAdministrador;
+import com.mycompany.saneamento_basico_r.model.view.Cliente.FrCliente;
 
 /**
  *
- * @author jose
+ * @author Guize
  */
-public class FrMenuPrincipal extends javax.swing.JFrame {
+public class FrMenuPrincipal extends javax.swing.JDialog {
 
+    /**
+     * Creates new form FrMenuPrincipal1
+     */
     public FrMenuPrincipal() {
         initComponents();
-
-//        ImageIcon icon = new ImageIcon(getClass().getResource("/imagens/remove_16x16.png"));
-//        if (icon.getImageLoadStatus() != MediaTracker.COMPLETE) {
-//            System.out.println("Erro ao carregar a imagem!");
-//        } else {
-//            System.out.println("Imagem carregada com sucesso!");
-//        }
     }
 
     /**
@@ -34,6 +33,10 @@ public class FrMenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         lblMenuPrincipal = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        lblPlanos = new javax.swing.JLabel();
+        btnVerPlanos = new javax.swing.JButton();
+        jSeparator5 = new javax.swing.JSeparator();
         panelLogin = new javax.swing.JPanel();
         btnLoginCliente = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
@@ -44,16 +47,52 @@ public class FrMenuPrincipal extends javax.swing.JFrame {
         btnLoginGerente = new javax.swing.JButton();
         lblLogin = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
-        lblPlanos = new javax.swing.JLabel();
-        btnVerPlanos = new javax.swing.JButton();
-        jSeparator5 = new javax.swing.JSeparator();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblMenuPrincipal.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         lblMenuPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMenuPrincipal.setText("Saneamento Básico GJR");
+
+        lblPlanos.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblPlanos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPlanos.setText("Planos");
+
+        btnVerPlanos.setText("Visualizar Planos");
+        btnVerPlanos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerPlanosActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jSeparator5)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(btnVerPlanos, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 7, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblPlanos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(lblPlanos, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(btnVerPlanos, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         btnLoginCliente.setText("Login Cliente");
         btnLoginCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -132,82 +171,45 @@ public class FrMenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        lblPlanos.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        lblPlanos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPlanos.setText("Planos");
-
-        btnVerPlanos.setText("Visualizar Planos");
-        btnVerPlanos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerPlanosActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jSeparator5)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addComponent(btnVerPlanos, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 7, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblPlanos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(lblPlanos, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(btnVerPlanos, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(114, 114, 114)
+                .addComponent(panelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(281, 281, 281))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(211, 211, 211)
-                .addComponent(panelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(158, 158, 158)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addGap(143, 143, 143))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addGap(38, 38, 38)
                 .addComponent(lblMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(64, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    /*private void imagemLogo()
-    {
-        
-    }*/
-    
+    private void btnVerPlanosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPlanosActionPerformed
+        FrPlanos dlgLoginPlanos = new FrPlanos(this, true);
+
+        dlgLoginPlanos.setLocationRelativeTo(this);
+        dlgLoginPlanos.setVisible(true);
+    }//GEN-LAST:event_btnVerPlanosActionPerformed
+
     private void btnLoginClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginClienteActionPerformed
         FrCliente dlgLoginCliente = new FrCliente(this, true);
 
@@ -216,14 +218,13 @@ public class FrMenuPrincipal extends javax.swing.JFrame {
         dlgLoginCliente.setVisible(true);
 
         /* Usando JFrame.
-        Esta forma não é legal, dado que temos mais de uma aplicacao na barra de tarefas. 
+        Esta forma não é legal, dado que temos mais de uma aplicacao na barra de tarefas.
         Dê preferencia por fazer a dinamica de telas usando JDialog como acima.
-        
+
         FrAluno telaAluno = new FrAluno(this);
         telaAluno.setVisible(true);
         this.setVisible(false);
-         */
-
+        */
     }//GEN-LAST:event_btnLoginClienteActionPerformed
 
     private void btnLoginFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginFuncionarioActionPerformed
@@ -247,13 +248,48 @@ public class FrMenuPrincipal extends javax.swing.JFrame {
         dlgLoginGerente.setVisible(true);
     }//GEN-LAST:event_btnLoginGerenteActionPerformed
 
-    private void btnVerPlanosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPlanosActionPerformed
-        FrPlanos dlgLoginPlanos = new FrPlanos(this, true);
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(FrMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FrMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FrMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FrMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
 
-        dlgLoginPlanos.setLocationRelativeTo(this);
-        dlgLoginPlanos.setVisible(true);
-    }//GEN-LAST:event_btnVerPlanosActionPerformed
-
+        /* Create and display the dialog */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                FrMenuPrincipal dialog = new FrMenuPrincipal();
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLoginAdministrador;
