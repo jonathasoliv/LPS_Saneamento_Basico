@@ -119,6 +119,11 @@ public class FrGerente extends javax.swing.JDialog {
 
         btnUsuarioLogin.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         btnUsuarioLogin.setText("Login");
+        btnUsuarioLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuarioLoginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -171,6 +176,10 @@ public class FrGerente extends javax.swing.JDialog {
     private void fAdministradorSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fAdministradorSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fAdministradorSenhaActionPerformed
+
+    private void btnUsuarioLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUsuarioLoginActionPerformed
 
     /**
      * Retorna o objeto (classe) da linha selecionada na grid.

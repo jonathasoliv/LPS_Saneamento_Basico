@@ -4,7 +4,7 @@
  */
 package com.mycompany.saneamento_basico_r.controller.tableModel;
 
-import com.mycompany.saneamento_basico_r.model.entities.Cliente;
+import com.mycompany.saneamento_basico_r.model.entities.Funcionario;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
@@ -12,9 +12,9 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author JonathasOliveira
  */
-public class TMCadCliente extends AbstractTableModel {
-
-    private List<Cliente> lista;
+public class TMCadFuncionario extends AbstractTableModel{
+    
+    private List<Funcionario> lista;
     private final int COL_NOME = 0;
     private final int COL_SEXO = 1;
     private final int COL_IDADE = 2;
@@ -28,8 +28,8 @@ public class TMCadCliente extends AbstractTableModel {
     private final int COL_BAIRRO = 10;
     private final int COL_UNIDADECONSUMIDORA = 11;
 
-    TMCadCliente(List<Cliente> lstClientes) {
-    lista = lstClientes;
+    TMCadFuncionario(List<Funcionario> lstFuncionario) {
+    lista = lstFuncionario;
 }
     
     @Override
@@ -44,33 +44,33 @@ public class TMCadCliente extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Cliente cliente = lista.get(rowIndex);
+        Funcionario funcionario = lista.get(rowIndex);
 
         switch (columnIndex) {
             case COL_NOME:
-                return cliente.getNome();
+                return funcionario.getNome();
             case COL_SEXO:
-                return cliente.getSexo();
+                return funcionario.getSexo();
             case COL_IDADE:
-                return cliente.getIdade();
+                return funcionario.getIdade();
             case COL_CPF:
-                return cliente.getCpf();
+                return funcionario.getCpf();
             case COL_DATANASCIMENTO:
-                return cliente.getDataNascimento();
+                return funcionario.getDataNascimento();
             case COL_ENDERECO:
-                return cliente.getEndereco();
+                return funcionario.getEndereco();
             case COL_EMAIL:
-                return cliente.getEmail();
+                return funcionario.getEmail();
             case COL_SENHA:
-                return cliente.getSenha();
+                return funcionario.getSenha();
             case COL_TELEFONE:
-                return cliente.getTelefone();
+                return funcionario.getTelefone();
             case COL_CIDADE:
-                return cliente.getCidade();
+                return funcionario.getCidade();
             case COL_BAIRRO:
-                return cliente.getBairro();
+                return funcionario.getBairro();
             case COL_UNIDADECONSUMIDORA:
-                return cliente.getUnidadeConsumidora();
+                return funcionario.getUnidadeConsumidora();
             default:
                 return null;
         }
@@ -119,7 +119,7 @@ public class TMCadCliente extends AbstractTableModel {
         }
     }
 
-    public Cliente getClienteAt(int rowIndex) {
+    public Funcionario getFuncionarioAt(int rowIndex) {
         return lista.get(rowIndex);
     }
 }

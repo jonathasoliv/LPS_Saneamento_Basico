@@ -16,7 +16,7 @@ import java.time.format.DateTimeParseException;
  */
 public class ValidateCliente {
     
-    public Cliente validaCamposEntrada(String nome, String sexo, int idade, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora){
+    public Cliente validaCamposEntrada(String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora){
         
         Cliente cliente = new Cliente();
         
@@ -35,7 +35,11 @@ public class ValidateCliente {
             throw new ClienteException("Error - Valor inválido no campo 'idade'.");
         cliente.setIdade(idade); 
         
-        
+        /*if (cpf.isEmpty() || validaCPF(cpf)) {
+            throw new ClienteException("Error - CPF inválido no campo 'cpf'.");
+        }
+        cliente.setCpf(cpf);
+        */
         
         if (dataNascimento.isEmpty()) {
         throw new ClienteException("Error - Campo vazio: 'dataNascimento'.");
@@ -69,7 +73,7 @@ public class ValidateCliente {
             throw new ClienteException("Error - Campo vazio: 'cidade'.");
         }
         if (cidade.length() > 100) { // Limite de comprimento máximo (altere conforme necessário)
-            throw new ClienteException("Error - Cidade muito longa no campo 'cidade'.");
+            throw new ClienteException("Error - Nome de cidade muito longa no campo 'cidade'.");
         }
 
         if (bairro.isEmpty()) {
