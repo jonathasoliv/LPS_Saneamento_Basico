@@ -27,21 +27,312 @@ public class CadastroCliente extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblLoginCliente = new javax.swing.JLabel();
+        fClienteNome = new javax.swing.JFormattedTextField();
+        lblClienteNome = new javax.swing.JLabel();
+        lblClienteSexo = new javax.swing.JLabel();
+        fClienteSexo = new javax.swing.JFormattedTextField();
+        btnClienteRegistrar = new javax.swing.JButton();
+        fClienteNascimento = new javax.swing.JFormattedTextField();
+        lblClienteNascimento = new javax.swing.JLabel();
+        lblClienteEndereco = new javax.swing.JLabel();
+        fClienteEndereco = new javax.swing.JFormattedTextField();
+        lblClienteUnidadeConsumidora = new javax.swing.JLabel();
+        fClienteTelefone = new javax.swing.JFormattedTextField();
+        lblClienteSenha = new javax.swing.JLabel();
+        fClienteSenha = new javax.swing.JFormattedTextField();
+        lblClienteUsuario = new javax.swing.JLabel();
+        fClienteUsuario = new javax.swing.JFormattedTextField();
+        lblClienteCPF = new javax.swing.JLabel();
+        fClienteCPF = new javax.swing.JFormattedTextField();
+        lblClienteCidade = new javax.swing.JLabel();
+        fClienteCidade = new javax.swing.JFormattedTextField();
+        lblClienteBairro = new javax.swing.JLabel();
+        fClienteBairro = new javax.swing.JFormattedTextField();
+        lblClienteTelefone = new javax.swing.JLabel();
+        fClienteUnidadeConsumidora = new javax.swing.JFormattedTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        lblLoginCliente.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblLoginCliente.setText("Cadastro de Cliente");
+
+        fClienteNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fClienteNomeActionPerformed(evt);
+            }
+        });
+
+        lblClienteNome.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblClienteNome.setText("Nome:");
+
+        lblClienteSexo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblClienteSexo.setText("Sexo:");
+
+        fClienteSexo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fClienteSexoActionPerformed(evt);
+            }
+        });
+
+        btnClienteRegistrar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnClienteRegistrar.setText("Registrar");
+        btnClienteRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClienteRegistrarActionPerformed(evt);
+            }
+        });
+
+        fClienteNascimento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fClienteNascimentoActionPerformed(evt);
+            }
+        });
+
+        lblClienteNascimento.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblClienteNascimento.setText("Data de nascimento:");
+
+        lblClienteEndereco.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblClienteEndereco.setText("Endereço:");
+
+        fClienteEndereco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fClienteEnderecoActionPerformed(evt);
+            }
+        });
+
+        lblClienteUnidadeConsumidora.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblClienteUnidadeConsumidora.setText("Unidade Consumidora:");
+
+        fClienteTelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fClienteTelefoneActionPerformed(evt);
+            }
+        });
+
+        lblClienteSenha.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblClienteSenha.setText("Senha:");
+
+        fClienteSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fClienteSenhaActionPerformed(evt);
+            }
+        });
+
+        lblClienteUsuario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblClienteUsuario.setText("Usuário:");
+
+        fClienteUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fClienteUsuarioActionPerformed(evt);
+            }
+        });
+
+        lblClienteCPF.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblClienteCPF.setText("CPF:");
+
+        fClienteCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fClienteCPFActionPerformed(evt);
+            }
+        });
+
+        lblClienteCidade.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblClienteCidade.setText("Cidade:");
+
+        fClienteCidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fClienteCidadeActionPerformed(evt);
+            }
+        });
+
+        lblClienteBairro.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblClienteBairro.setText("Bairro:");
+
+        fClienteBairro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fClienteBairroActionPerformed(evt);
+            }
+        });
+
+        lblClienteTelefone.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblClienteTelefone.setText("Telefone");
+
+        fClienteUnidadeConsumidora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fClienteUnidadeConsumidoraActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 873, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(313, 313, 313)
+                        .addComponent(lblLoginCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblClienteNome)
+                                    .addComponent(lblClienteSexo))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(fClienteSexo, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
+                                    .addComponent(fClienteNome))
+                                .addGap(42, 42, 42)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblClienteSenha)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(fClienteSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblClienteUsuario)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(fClienteUsuario))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblClienteUnidadeConsumidora)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(lblClienteEndereco)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(fClienteEndereco))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblClienteNascimento)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(fClienteNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblClienteTelefone)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(fClienteTelefone)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(33, 33, 33)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(lblClienteBairro)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(fClienteBairro))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(lblClienteCPF)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(fClienteCPF))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(lblClienteCidade)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(fClienteCidade))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnClienteRegistrar)
+                                        .addGap(131, 131, 131)))))))
+                .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(268, 268, 268)
+                    .addComponent(fClienteUnidadeConsumidora, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(434, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 517, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(lblLoginCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblClienteNome, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fClienteNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblClienteSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fClienteSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblClienteSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fClienteSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblClienteUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fClienteUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblClienteNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fClienteNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblClienteCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fClienteCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblClienteEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fClienteEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblClienteCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fClienteCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblClienteUnidadeConsumidora, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblClienteBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fClienteBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnClienteRegistrar)
+                    .addComponent(lblClienteTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fClienteTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(102, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(330, Short.MAX_VALUE)
+                    .addComponent(fClienteUnidadeConsumidora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(165, 165, 165)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void fClienteNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fClienteNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fClienteNomeActionPerformed
+
+    private void fClienteSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fClienteSexoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fClienteSexoActionPerformed
+
+    private void btnClienteRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteRegistrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClienteRegistrarActionPerformed
+
+    private void fClienteNascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fClienteNascimentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fClienteNascimentoActionPerformed
+
+    private void fClienteEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fClienteEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fClienteEnderecoActionPerformed
+
+    private void fClienteTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fClienteTelefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fClienteTelefoneActionPerformed
+
+    private void fClienteSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fClienteSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fClienteSenhaActionPerformed
+
+    private void fClienteUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fClienteUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fClienteUsuarioActionPerformed
+
+    private void fClienteCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fClienteCPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fClienteCPFActionPerformed
+
+    private void fClienteCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fClienteCidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fClienteCidadeActionPerformed
+
+    private void fClienteBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fClienteBairroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fClienteBairroActionPerformed
+
+    private void fClienteUnidadeConsumidoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fClienteUnidadeConsumidoraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fClienteUnidadeConsumidoraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -87,5 +378,29 @@ public class CadastroCliente extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClienteRegistrar;
+    private javax.swing.JFormattedTextField fClienteBairro;
+    private javax.swing.JFormattedTextField fClienteCPF;
+    private javax.swing.JFormattedTextField fClienteCidade;
+    private javax.swing.JFormattedTextField fClienteEndereco;
+    private javax.swing.JFormattedTextField fClienteNascimento;
+    private javax.swing.JFormattedTextField fClienteNome;
+    private javax.swing.JFormattedTextField fClienteSenha;
+    private javax.swing.JFormattedTextField fClienteSexo;
+    private javax.swing.JFormattedTextField fClienteTelefone;
+    private javax.swing.JFormattedTextField fClienteUnidadeConsumidora;
+    private javax.swing.JFormattedTextField fClienteUsuario;
+    private javax.swing.JLabel lblClienteBairro;
+    private javax.swing.JLabel lblClienteCPF;
+    private javax.swing.JLabel lblClienteCidade;
+    private javax.swing.JLabel lblClienteEndereco;
+    private javax.swing.JLabel lblClienteNascimento;
+    private javax.swing.JLabel lblClienteNome;
+    private javax.swing.JLabel lblClienteSenha;
+    private javax.swing.JLabel lblClienteSexo;
+    private javax.swing.JLabel lblClienteTelefone;
+    private javax.swing.JLabel lblClienteUnidadeConsumidora;
+    private javax.swing.JLabel lblClienteUsuario;
+    private javax.swing.JLabel lblLoginCliente;
     // End of variables declaration//GEN-END:variables
 }
