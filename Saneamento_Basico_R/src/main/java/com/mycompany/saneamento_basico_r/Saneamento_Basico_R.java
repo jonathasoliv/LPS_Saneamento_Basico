@@ -4,7 +4,7 @@
 
 package com.mycompany.saneamento_basico_r;
 
-import com.mycompany.saneamento_basico_r.model.view.Menu;
+import com.mycompany.saneamento_basico_r.model.view.FrMenuPrincipal;
 
 /**
  *
@@ -13,7 +13,7 @@ import com.mycompany.saneamento_basico_r.model.view.Menu;
 public class Saneamento_Basico_R {
 
     public static void main(String[] args) {
-        Menu telaMenu = new Menu(); //decido quem aparece primeiro
+        FrMenuPrincipal telaMenu = new FrMenuPrincipal(); //decido quem aparece primeiro
         telaMenu.setVisible(true);
     }
 }
