@@ -4,7 +4,7 @@
  */
 package com.mycompany.saneamento_basico_r.controller.tableModel;
 
-import com.mycompany.saneamento_basico_r.model.entities.Cliente;
+import com.mycompany.saneamento_basico_r.model.entities.Usuario;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
@@ -14,7 +14,7 @@ import javax.swing.table.AbstractTableModel;
  */
 public class TMCadCliente extends AbstractTableModel {
 
-    private List<Cliente> lista;
+    private List<Usuario> lista;
     private final int COL_NOME = 0;
     private final int COL_SEXO = 1;
     private final int COL_IDADE = 2;
@@ -28,7 +28,7 @@ public class TMCadCliente extends AbstractTableModel {
     private final int COL_BAIRRO = 10;
     private final int COL_UNIDADECONSUMIDORA = 11;
 
-    TMCadCliente(List<Cliente> lstClientes) {
+    TMCadCliente(List<Usuario> lstClientes) {
     lista = lstClientes;
 }
     
@@ -44,7 +44,7 @@ public class TMCadCliente extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Cliente cliente = lista.get(rowIndex);
+        Usuario cliente = lista.get(rowIndex);
 
         switch (columnIndex) {
             case COL_NOME:
@@ -119,7 +119,7 @@ public class TMCadCliente extends AbstractTableModel {
         }
     }
 
-    public Cliente getClienteAt(int rowIndex) {
+    public Usuario getClienteAt(int rowIndex) {
         return lista.get(rowIndex);
     }
 }
