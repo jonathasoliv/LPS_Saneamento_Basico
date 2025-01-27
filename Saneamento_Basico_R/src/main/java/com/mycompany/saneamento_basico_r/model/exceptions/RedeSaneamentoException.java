@@ -4,10 +4,10 @@
  */
 package com.mycompany.saneamento_basico_r.model.exceptions;
 
-public class AdministradorException extends UsuarioException {
-
-    public AdministradorException(String msg) {
-        super(msg);
-    }
-
+/**
+ *
+ * @author JonathasOliveira
+ */
+public class RedeSaneamentoException {
+    
 }

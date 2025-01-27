@@ -5,22 +5,22 @@
 package com.mycompany.saneamento_basico_r.model.dao;
 
 import com.mycompany.saneamento_basico_r.factory.DatabaseJPA;
-import com.mycompany.saneamento_basico_r.model.entities.Gerente;
-import java.util.ArrayList;
-import java.util.List;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import com.mycompany.saneamento_basico_r.model.entities.Fatura;
 import java.time.LocalDateTime;
+import java.util.List;
 import javax.persistence.EntityManager;
 
-public class GerenteDao implements IDao<Gerente> {
+/**
+ *
+ * @author JonathasOliveira
+ */
+
+public class FaturaDao implements IDao<Fatura> {
 
     private EntityManager entityManager;
 
     @Override
-    public void salvar(Gerente obj) {
+    public void salvar(Fatura obj) {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
         this.entityManager.getTransaction().begin();
@@ -31,80 +31,64 @@ public class GerenteDao implements IDao<Gerente> {
     }
 
     @Override
-    public void editar(Gerente obj) {
+    public void editar(Fatura obj) {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
-
         this.entityManager.getTransaction().begin();
         this.entityManager.merge(obj);
         this.entityManager.getTransaction().commit();
-
         this.entityManager.close();
     }
 
     @Override
-    public boolean deletar(Gerente obj) {
+    public boolean deletar(Fatura obj) {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
-
         this.entityManager.getTransaction().begin();
         obj.setDeletadoEm(LocalDateTime.now());
         this.entityManager.merge(obj);
         this.entityManager.getTransaction().commit();
-
         this.entityManager.close();
         return true;
     }
 
     @Override
-    public Gerente buscar(int id) {
+    public Fatura buscar(int id) {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
-
-        Gerente gerente = this.entityManager.find(Gerente.class, id);
-
+        Fatura fatura = this.entityManager.find(Fatura.class, id);
         this.entityManager.close();
-
-        return gerente;
+        return fatura;
     }
 
     @Override
-    public List<Gerente> buscarTodos() {
+    public List<Fatura> buscarTodos() {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
-
-        List<Gerente> gerentes = this.entityManager
-                .createQuery("FROM Gerente g WHERE g.deletadoEm IS NULL ORDER BY LOWER(g.nome)", Gerente.class)
+        List<Fatura> faturas = this.entityManager.createQuery(
+                "FROM Fatura f WHERE f.deletadoEm IS NULL ORDER BY f.id DESC",
+                Fatura.class)
                 .getResultList();
-
         this.entityManager.close();
-        return gerentes;
+        return faturas;
     }
 
-    public Gerente buscarPorCpf(String cpf) {
+    public List<Fatura> buscarPorFatura(int id) {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
-
-        Gerente gerente = this.entityManager
-                .createQuery("FROM Gerente g WHERE g.cpf = :cpf AND g.deletadoEm IS NULL", Gerente.class)
-                .setParameter("cpf", cpf)
-                .getResultList()
-                .stream()
-                .findFirst()
-                .orElse(null);
-
+        List<Fatura> faturas = this.entityManager.createQuery(
+                "FROM Fatura f WHERE f.deletadoEm IS NULL AND f.cliente.id = :id",
+                Fatura.class)
+                .setParameter("id", id)
+                .getResultList();
         this.entityManager.close();
-        return gerente;
+        return faturas;
     }
 
-    public Gerente buscarPorEmail(String email) {
+    public Fatura buscarPorProcedimento(int id) {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
-
-        Gerente gerente = this.entityManager
-                .createQuery("FROM Gerente g WHERE g.email = :email AND g.deletadoEm IS NULL", Gerente.class)
-                .setParameter("email", email)
-                .getResultList()
-                .stream()
-                .findFirst()
-                .orElse(null);
-
+        Fatura fatura = this.entityManager.createQuery(
+                "FROM Fatura f WHERE f.deletadoEm IS NULL AND f.procedimento.id = :id",
+                Fatura.class)
+                .setParameter("id", id)
+                .getResultList().stream().findFirst().orElse(null);
         this.entityManager.close();
-        return gerente;
+        return fatura;
     }
 
 }

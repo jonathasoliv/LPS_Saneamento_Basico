@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.saneamento_basico_r.model.dao;
+package com.mycompany.saneamento_basico_r.model.utils;
 
 import java.util.List;
 
@@ -10,17 +10,10 @@ import java.util.List;
  *
  * @author JonathasOliveira
  */
+public interface IGerarDocumento {
 
-public interface IDao<T> {
+    public void gerarDocumento(String caminho, String... conteudo);
 
-    public void salvar(T obj);
-
-    public void editar(T obj);
-
-    public boolean deletar(T obj);
-
-    public T buscar(int id);
-
-    public List<T> buscarTodos();
+    public void combinarDocumentos(String caminhoSaida, List<String> caminhosEntrada);
 
 }

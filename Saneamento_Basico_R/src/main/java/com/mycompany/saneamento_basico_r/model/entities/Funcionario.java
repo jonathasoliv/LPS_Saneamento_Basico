@@ -4,47 +4,30 @@
  */
 package com.mycompany.saneamento_basico_r.model.entities;
 
-import com.mycompany.saneamento_basico_r.model.entities.Pessoa;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
-/**
- *
- * @author JonathasOliveira
- */
-public class Funcionario extends Pessoa{
-    private int id;
+@Entity
+@DiscriminatorValue("FUNCIONARIO")
+@Setter
+@Getter
+@NoArgsConstructor
 
-    public Funcionario() {
-        super();
-        
+public class Funcionario extends Usuario{
+
+    private LocalDate dataContratacao;
+    public Funcionario(String cpf, String nome, String email, String senha, LocalDate dataNascimento,
+            String telefone, String endereco, LocalDateTime deletadoEm, String historicoConsumo) {
+        super(0, cpf, nome, email, senha, dataNascimento, telefone, endereco, deletadoEm);
+
+        this.dataContratacao = dataContratacao;
+
     }
     
-    public Funcionario(int id, String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {
-        super(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora);
-        this.id = id;
-        
-    }
-    
-    public void copiar(Funcionario outro) {
-        this.setId(outro.getId());
-        this.nome = outro.getNome();
-        this.sexo = outro.getSexo();
-        this.idade = outro.getIdade();
-        this.cpf = outro.getCpf();
-        
-    }
-
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
 }

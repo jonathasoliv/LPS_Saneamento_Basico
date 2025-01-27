@@ -4,9 +4,14 @@
  */
 package com.mycompany.saneamento_basico_r.model.exceptions;
 
-public class AdministradorException extends UsuarioException {
+/**
+ *
+ * @author JonathasOliveira
+ */
 
-    public AdministradorException(String msg) {
+public class UsuarioException extends RuntimeException {
+
+    public UsuarioException(String msg) {
         super(msg);
     }
 

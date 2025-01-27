@@ -5,7 +5,7 @@
 package com.mycompany.saneamento_basico_r.model.dao;
 
 
-import com.mycompany.saneamento_basico_r.factory.Persistencia;
+import com.mycompany.saneamento_basico_r.factory.DatabaseJPA;
 import com.mycompany.saneamento_basico_r.model.entities.Funcionario;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,214 +13,102 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-/**
- *
- * @author JonathasOliveira
- */
-public class FuncionarioDAO implements IDao{
-    protected Connection connection;
-    private PreparedStatement statement;
-    private String sql;
+import java.time.LocalDateTime;
+import javax.persistence.EntityManager;
 
-    public FuncionarioDAO() {
-        this.sql = "";
+
+public class FuncionarioDao implements IDao<Funcionario> {
+
+    private EntityManager entityManager;
+
+    @Override
+    public void salvar(Funcionario obj) {
+        this.entityManager = DatabaseJPA.getInstance().getEntityManager();
+
+        this.entityManager.getTransaction().begin();
+        this.entityManager.persist(obj);
+        this.entityManager.getTransaction().commit();
+
+        this.entityManager.close();
     }
 
     @Override
-    public void save(Object obj) {
-        Funcionario funcionario = (Funcionario) obj;
+    public void editar(Funcionario obj) {
+        this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
-        sql = "INSERT INTO funcionario(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora) "
-                + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
-        try {
-            connection = Persistencia.getConnection();
-            statement = connection.prepareStatement(sql);
+        this.entityManager.getTransaction().begin();
+        this.entityManager.merge(obj);
+        this.entityManager.getTransaction().commit();
 
-            statement.setString(1, funcionario.getNome());
-            statement.setString(2, String.valueOf(funcionario.getSexo()));
-            statement.setInt(3, funcionario.getIdade());
-            statement.setString(4,funcionario.getCpf());
-            statement.setString(5, funcionario.getDataNascimento());
-            statement.setString(6, funcionario.getEndereco());
-            statement.setString(7, funcionario.getEmail());
-            statement.setString(8, funcionario.getSenha());
-            statement.setString(9, funcionario.getTelefone());
-            statement.setString(10, funcionario.getCidade());
-            statement.setString(11, funcionario.getBairro());
-            statement.setString(12, funcionario.getUnidadeConsumidora());
+        this.entityManager.close();
 
-            statement.execute();
-            statement.close();
-        } catch (SQLException u) {
-            throw new RuntimeException(u);
-        } finally {
-            Persistencia.closeConnection();
-        }
-    }
-
-    
-    public void update(Object obj) {
-        Funcionario funcionario = (Funcionario) obj;
-
-        sql = "UPDATE funcionario "
-                + "SET nome=?, sexo=?, idade=?, cpf=?, dataNascimento=?, endereco=?, email=?, senha=?, telefone=? , cidade=?, bairro=?, unidadeConsumidora=?"
-                + "WHERE id = ?";
-        try {
-            connection = Persistencia.getConnection();
-            statement = connection.prepareStatement(sql);
-
-            statement.setString(1, funcionario.getNome());
-            statement.setString(2, String.valueOf(funcionario.getSexo()));
-            statement.setInt(3, funcionario.getIdade());
-            statement.setString(4,funcionario.getCpf());
-            statement.setString(5, funcionario.getDataNascimento());
-            statement.setString(6, funcionario.getEndereco());
-            statement.setString(7, funcionario.getEmail());
-            statement.setString(8, funcionario.getSenha());
-            statement.setString(9, funcionario.getTelefone());
-            statement.setString(10, funcionario.getCidade());
-            statement.setString(11, funcionario.getBairro());
-            statement.setString(12, funcionario.getUnidadeConsumidora());
-
-            statement.setInt(13, funcionario.getId());
-
-            statement.execute();
-            statement.close();
-        } catch (SQLException u) {
-            throw new RuntimeException(u);
-        } finally {
-            Persistencia.closeConnection();
-        }
     }
 
     @Override
-    public List<Object> findAll() {
-        List<Object> list = new ArrayList<>();
+    public boolean deletar(Funcionario obj) {
+        this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
-        sql = "SELECT * FROM funcionario ORDER BY upper(nome)";
-        try {
-            statement = Persistencia.getConnection().prepareStatement(sql);
-            ResultSet resultSet = statement.executeQuery();
-            while (resultSet.next()) {
-                Funcionario funcionario = new Funcionario(
-                        resultSet.getInt("id"),
-                        resultSet.getString("nome"),
-                        resultSet.getString("sexo"),
-                        resultSet.getInt("idade"),
-                        resultSet.getString("cpf"),
-                        resultSet.getString("dataNascimento"),
-                        resultSet.getString("endereco"),
-                        resultSet.getString("email"),
-                        resultSet.getString("senha"),
-                        resultSet.getString("telefone"),
-                        resultSet.getString("cidade"),
-                        resultSet.getString("bairro"),
-                        resultSet.getString("unidadeConsumidora")
-                );
+        this.entityManager.getTransaction().begin();
+        obj.setDeletadoEm(LocalDateTime.now());
+        this.entityManager.merge(obj);
+        this.entityManager.getTransaction().commit();
 
-                list.add(funcionario);
-            }
-            statement.close();
-        } catch (SQLException ex) {
-            throw new RuntimeException(ex);
-        } finally {
-            Persistencia.closeConnection();
-        }
-
-        return list;
+        this.entityManager.close();
+        return true;
     }
 
     @Override
-    public Object find(Object obj) {
-        Funcionario funcionario = (Funcionario) obj;
+    public Funcionario buscar(int id) {
+        this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
-        sql = "SELECT * FROM funcionario WHERE id = ?";
-        try {
-            statement = Persistencia.getConnection().prepareStatement(sql);
-            statement.setInt(1, funcionario.getId());
+        Funcionario funcionario = this.entityManager.find(Funcionario.class, id);
 
-            ResultSet resultSet = statement.executeQuery();
+        this.entityManager.close();
 
-            Funcionario foundFuncionario = null;
-            while (resultSet.next()) {
-                foundFuncionario = new Funcionario(
-                        resultSet.getInt("id"),
-                        resultSet.getString("nome"),
-                        resultSet.getString("sexo"),
-                        resultSet.getInt("idade"),
-                        resultSet.getString("cpf"),
-                        resultSet.getString("dataNascimento"),
-                        resultSet.getString("endereco"),
-                        resultSet.getString("email"),
-                        resultSet.getString("senha"),
-                        resultSet.getString("telefone"),
-                        resultSet.getString("cidade"),
-                        resultSet.getString("bairro"),
-                        resultSet.getString("unidadeConsumidora")
-                );
-            }
-            statement.close();
-            return foundFuncionario;
-        } catch (SQLException u) {
-            throw new RuntimeException(u);
-        } finally {
-            Persistencia.closeConnection();
-        }
+        return funcionario;
+
     }
 
-    public Object findByEndereco(String email) {
-        sql = "SELECT * FROM funcionario WHERE endereco = ?";
+    @Override
+    public List<Funcionario> buscarTodos() {
+        this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
-        Funcionario funcionario = null;
-        try {
-            connection = Persistencia.getConnection();
-            statement = connection.prepareStatement(sql);
-            statement.setString(1, email);
+        List<Funcionario> funcionarios = this.entityManager
+                .createQuery("FROM Funcionario f WHERE f.deletadoEm IS NULL ORDER BY LOWER(f.nome)", Funcionario.class)
+                .getResultList();
 
-            ResultSet resultSet = statement.executeQuery();
-            while (resultSet.next()) {
-                funcionario = new Funcionario(
-                        resultSet.getInt("id"),
-                        resultSet.getString("nome"),
-                        resultSet.getString("sexo"),
-                        resultSet.getInt("idade"),
-                        resultSet.getString("cpf"),
-                        resultSet.getString("dataNascimento"),
-                        resultSet.getString("endereco"),
-                        resultSet.getString("email"),
-                        resultSet.getString("senha"),
-                        resultSet.getString("telefone"),
-                        resultSet.getString("cidade"),
-                        resultSet.getString("bairro"),
-                        resultSet.getString("unidadeConsumidora")
-                );
-            }
-            statement.close();
-        } catch (SQLException ex) {
-            throw new RuntimeException(ex);
-        } finally {
-            Persistencia.closeConnection();
-        }
+        this.entityManager.close();
+        return funcionarios;
+    }
+
+    public Funcionario buscarPorCpf(String cpf) {
+        this.entityManager = DatabaseJPA.getInstance().getEntityManager();
+
+        Funcionario funcionario = this.entityManager
+                .createQuery("FROM Funcionario f WHERE f.cpf = :cpf AND f.deletadoEm IS NULL", Funcionario.class)
+                .setParameter("cpf", cpf)
+                .getResultList()
+                .stream()
+                .findFirst()
+                .orElse(null);
+
+        this.entityManager.close();
         return funcionario;
     }
 
-    @Override
-    public boolean delete(Object obj) {
-        Funcionario funcionario = (Funcionario) obj;
+    public Funcionario buscarPorEmail(String email) {
+        this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
-        sql = "DELETE FROM funcionario WHERE id = ?";
-        try {
-            connection = Persistencia.getConnection();
-            statement = connection.prepareStatement(sql);
-            statement.setLong(1, funcionario.getId());
+        Funcionario funcionario = this.entityManager
+                .createQuery("FROM Funcionario f WHERE f.email = :email AND f.deletadoEm IS NULL", Funcionario.class)
+                .setParameter("email", email)
+                .getResultList()
+                .stream()
+                .findFirst()
+                .orElse(null);
 
-            statement.execute();
-            statement.close();
-            return true;
-        } catch (SQLException ex) {
-            throw new RuntimeException(ex);
-        } finally {
-            Persistencia.closeConnection();
-        }
+        this.entityManager.close();
+        return funcionario;
     }
+
 }

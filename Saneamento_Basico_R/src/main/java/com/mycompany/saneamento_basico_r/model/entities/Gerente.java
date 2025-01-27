@@ -4,46 +4,33 @@
  */
 package com.mycompany.saneamento_basico_r.model.entities;
 
-import com.mycompany.saneamento_basico_r.model.entities.Pessoa;
+import com.mycompany.saneamento_basico_r.model.entities.Usuario;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
-/**
- *
- * @author JonathasOliveira
- */
-public class Gerente extends Pessoa {
-    private int id;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
-    public Gerente() {
-        super();
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@DiscriminatorValue("GERENTE")
+@Setter
+@Getter
+@ToString(callSuper = true)
+@NoArgsConstructor
+
+public class Gerente extends Usuario {
+
+    private LocalDate dataContratacao;
+    public Gerente(String cpf, String nome, String email, String senha, LocalDate dataNascimento,
+            String telefone, String endereco, LocalDateTime deletadoEm, String historicoConsumo) {
+        super(0, cpf, nome, email, senha, dataNascimento, telefone, endereco, deletadoEm);
         
+        this.dataContratacao = dataContratacao;
     }
     
-    public Gerente(int id, String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {
-        super(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora);
-        this.id = id;
-        
-    }
-    
-    public void copiar(Gerente outro) {
-        this.setId(outro.getId());
-        this.nome = outro.getNome();
-        this.sexo = outro.getSexo();
-        this.idade = outro.getIdade();
-        this.cpf = outro.getCpf();
-        
-    }
-
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
 }

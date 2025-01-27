@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.saneamento_basico_r.model.exceptions;
+package com.mycompany.saneamento_basico_r.controller;
 
-public class AdministradorException extends UsuarioException {
-
-    public AdministradorException(String msg) {
-        super(msg);
-    }
-
+/**
+ *
+ * @author JonathasOliveira
+ */
+public class RelatorioController {
+    
 }
