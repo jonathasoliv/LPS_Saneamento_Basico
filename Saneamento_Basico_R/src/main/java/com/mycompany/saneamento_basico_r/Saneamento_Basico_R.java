@@ -4,7 +4,7 @@
 
 package com.mycompany.saneamento_basico_r;
 
-import com.mycompany.saneamento_basico_r.model.view.FrMenuPrincipal;
+import com.mycompany.saneamento_basico_r.model.view.MenuPrincipal.FrMenuPrincipal;
 
 /**
  *

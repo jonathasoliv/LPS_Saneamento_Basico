@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package com.mycompany.saneamento_basico_r.model.view;
+package com.mycompany.saneamento_basico_r.model.view.CadastrarEmpresa;
 
 /**
  *
  * @author Guize
  */
-public class FrEmpresaSaneamento extends javax.swing.JDialog {
+public class FrCadastroEmpresaSaneamento extends javax.swing.JDialog {
 
     /**
      * Creates new form FrEmpresaSaneamento1
      */
-    public FrEmpresaSaneamento(java.awt.Dialog parent, boolean modal) {
+    public FrCadastroEmpresaSaneamento(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -36,8 +36,10 @@ public class FrEmpresaSaneamento extends javax.swing.JDialog {
         panFormulario = new javax.swing.JPanel();
         lblNome = new javax.swing.JLabel();
         edtNome = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        grdAlunos = new javax.swing.JTable();
+        lbl = new javax.swing.JLabel();
+        edtCNPJ = new javax.swing.JTextField();
+        lblEmail = new javax.swing.JLabel();
+        edtEmail = new javax.swing.JTextField();
         lblTitle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -92,16 +94,42 @@ public class FrEmpresaSaneamento extends javax.swing.JDialog {
             }
         });
 
+        lbl.setText("CNPJ:");
+
+        edtCNPJ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edtCNPJActionPerformed(evt);
+            }
+        });
+
+        lblEmail.setText("E-mail de contato:");
+
+        edtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edtEmailActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panFormularioLayout = new javax.swing.GroupLayout(panFormulario);
         panFormulario.setLayout(panFormularioLayout);
         panFormularioLayout.setHorizontalGroup(
             panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panFormularioLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(panFormularioLayout.createSequentialGroup()
+                        .addComponent(lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(edtCNPJ))
+                    .addGroup(panFormularioLayout.createSequentialGroup()
+                        .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(edtNome))
+                    .addGroup(panFormularioLayout.createSequentialGroup()
+                        .addComponent(lblEmail)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(edtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
         panFormularioLayout.setVerticalGroup(
             panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,26 +138,16 @@ public class FrEmpresaSaneamento extends javax.swing.JDialog {
                 .addGroup(panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNome)
                     .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl)
+                    .addComponent(edtCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEmail)
+                    .addComponent(edtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
-
-        grdAlunos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        grdAlunos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                grdAlunosMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(grdAlunos);
 
         lblTitle.setFont(new java.awt.Font("Fira Sans", 1, 36)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -143,7 +161,6 @@ public class FrEmpresaSaneamento extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE)
                     .addComponent(panButtons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -156,8 +173,6 @@ public class FrEmpresaSaneamento extends javax.swing.JDialog {
                 .addComponent(panButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -184,13 +199,17 @@ public class FrEmpresaSaneamento extends javax.swing.JDialog {
         
     }//GEN-LAST:event_btnSalvarActionPerformed
 
-    private void grdAlunosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_grdAlunosMouseClicked
-
-    }//GEN-LAST:event_grdAlunosMouseClicked
-
     private void edtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_edtNomeActionPerformed
+
+    private void edtCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCNPJActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edtCNPJActionPerformed
+
+    private void edtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edtEmailActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,9 +221,11 @@ public class FrEmpresaSaneamento extends javax.swing.JDialog {
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JTextField edtCNPJ;
+    private javax.swing.JTextField edtEmail;
     private javax.swing.JTextField edtNome;
-    private javax.swing.JTable grdAlunos;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbl;
+    private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JPanel panButtons;

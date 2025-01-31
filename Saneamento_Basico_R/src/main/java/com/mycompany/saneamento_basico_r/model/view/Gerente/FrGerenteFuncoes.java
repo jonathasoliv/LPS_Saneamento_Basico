@@ -9,7 +9,7 @@ import com.mycompany.saneamento_basico_r.model.view.Adminisctrador.*;
 import com.mycompany.saneamento_basico_r.model.view.Cliente.FrClienteHistoricoConsumo;
 import com.mycompany.saneamento_basico_r.model.view.Cliente.FrClientePendencias;
 import com.mycompany.saneamento_basico_r.controller.ClienteController;
-import com.mycompany.saneamento_basico_r.model.view.FrEmpresaSaneamento;
+import com.mycompany.saneamento_basico_r.model.view.CadastrarEmpresa.FrCadastroEmpresaSaneamento;
 import com.mycompany.saneamento_basico_r.model.view.Planos.FrPlanosEscolher;
 import java.text.ParseException;
 import java.util.logging.Level;
@@ -81,16 +81,34 @@ public class FrGerenteFuncoes extends javax.swing.JDialog {
     private void initComponents() {
 
         lblGerente = new javax.swing.JLabel();
+        btnCadastrarRede = new javax.swing.JButton();
+        btnAdicionarPlanos = new javax.swing.JButton();
         btnSuporte = new javax.swing.JButton();
         btnManutencao = new javax.swing.JButton();
-        btnAdicionarEmpresas = new javax.swing.JButton();
-        btnGerarRelatorio = new javax.swing.JButton();
+        btnGeraRelatorioDeConsumo = new javax.swing.JButton();
+        btnbtnGeraRelatorioDeFatura = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Alunos");
 
         lblGerente.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         lblGerente.setText("Funções Gerente");
+
+        btnCadastrarRede.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnCadastrarRede.setText("Cadastrar Rede de Saneamento");
+        btnCadastrarRede.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarRedeActionPerformed(evt);
+            }
+        });
+
+        btnAdicionarPlanos.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnAdicionarPlanos.setText("Adicionar Planos");
+        btnAdicionarPlanos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarPlanosActionPerformed(evt);
+            }
+        });
 
         btnSuporte.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         btnSuporte.setText("Suporte Tecnico");
@@ -101,26 +119,26 @@ public class FrGerenteFuncoes extends javax.swing.JDialog {
         });
 
         btnManutencao.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        btnManutencao.setText("Enviar aviso de manutenção de sistema");
+        btnManutencao.setText("Manutenção do Sistema");
         btnManutencao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManutencaoActionPerformed(evt);
             }
         });
 
-        btnAdicionarEmpresas.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        btnAdicionarEmpresas.setText("Adicionar Empresas de Saneamento no Sistema");
-        btnAdicionarEmpresas.addActionListener(new java.awt.event.ActionListener() {
+        btnGeraRelatorioDeConsumo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnGeraRelatorioDeConsumo.setText("Gerar Relatório de Consumo");
+        btnGeraRelatorioDeConsumo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdicionarEmpresasActionPerformed(evt);
+                btnGeraRelatorioDeConsumoActionPerformed(evt);
             }
         });
 
-        btnGerarRelatorio.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        btnGerarRelatorio.setText("Gerar Relatório de Contas e Faturas");
-        btnGerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
+        btnbtnGeraRelatorioDeFatura.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnbtnGeraRelatorioDeFatura.setText("Gerar Relatório de Faturas");
+        btnbtnGeraRelatorioDeFatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGerarRelatorioActionPerformed(evt);
+                btnbtnGeraRelatorioDeFaturaActionPerformed(evt);
             }
         });
 
@@ -129,66 +147,85 @@ public class FrGerenteFuncoes extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(151, Short.MAX_VALUE)
+                .addGap(232, 232, 232)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnManutencao)
-                        .addGap(170, 170, 170))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnAdicionarEmpresas)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnGerarRelatorio)
-                                .addGap(45, 45, 45)))
-                        .addGap(131, 131, 131))
+                    .addComponent(btnGeraRelatorioDeConsumo)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(btnbtnGeraRelatorioDeFatura)))
+                .addGap(0, 206, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(lblGerente)
                         .addGap(248, 248, 248))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnManutencao)
+                        .addGap(228, 228, 228))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnCadastrarRede)
+                        .addGap(193, 193, 193))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnAdicionarPlanos)
+                        .addGap(265, 265, 265))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnSuporte)
-                        .addGap(259, 259, 259))))
+                        .addGap(261, 261, 261))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(69, 69, 69)
                 .addComponent(lblGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addGap(18, 18, 18)
                 .addComponent(btnSuporte)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnManutencao)
-                .addGap(18, 18, 18)
-                .addComponent(btnAdicionarEmpresas)
-                .addGap(18, 18, 18)
-                .addComponent(btnGerarRelatorio)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnCadastrarRede)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAdicionarPlanos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnGeraRelatorioDeConsumo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnbtnGeraRelatorioDeFatura)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCadastrarRedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarRedeActionPerformed
+        FrCadastroEmpresaSaneamento dlgEmpresaSaneamento = new FrCadastroEmpresaSaneamento(this, true);
+
+        dlgEmpresaSaneamento.setLocationRelativeTo(this);
+        dlgEmpresaSaneamento.setVisible(true);
+    }//GEN-LAST:event_btnCadastrarRedeActionPerformed
+
+    private void btnAdicionarPlanosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarPlanosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdicionarPlanosActionPerformed
+
+    private void btnSuporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuporteActionPerformed
+
+    }//GEN-LAST:event_btnSuporteActionPerformed
+
     private void btnManutencaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManutencaoActionPerformed
         FrAdministradorAvisoManutencao dlgAvisoManutencao = new FrAdministradorAvisoManutencao(this, true);
-        
+
         dlgAvisoManutencao.setLocationRelativeTo(this);
         dlgAvisoManutencao.setVisible(true);
     }//GEN-LAST:event_btnManutencaoActionPerformed
 
-    private void btnAdicionarEmpresasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarEmpresasActionPerformed
-        FrEmpresaSaneamento dlgEmpresaSaneamento = new FrEmpresaSaneamento(this, true);
-        
-        dlgEmpresaSaneamento.setLocationRelativeTo(this);
-        dlgEmpresaSaneamento.setVisible(true);
-    }//GEN-LAST:event_btnAdicionarEmpresasActionPerformed
-
-    private void btnSuporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuporteActionPerformed
-        
-    }//GEN-LAST:event_btnSuporteActionPerformed
-
-    private void btnGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarRelatorioActionPerformed
+    private void btnGeraRelatorioDeConsumoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGeraRelatorioDeConsumoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnGerarRelatorioActionPerformed
+    }//GEN-LAST:event_btnGeraRelatorioDeConsumoActionPerformed
+
+    private void btnbtnGeraRelatorioDeFaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbtnGeraRelatorioDeFaturaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnbtnGeraRelatorioDeFaturaActionPerformed
 
     /**
      * Retorna o objeto (classe) da linha selecionada na grid.
@@ -208,10 +245,12 @@ public class FrGerenteFuncoes extends javax.swing.JDialog {
     }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdicionarEmpresas;
-    private javax.swing.JButton btnGerarRelatorio;
+    private javax.swing.JButton btnAdicionarPlanos;
+    private javax.swing.JButton btnCadastrarRede;
+    private javax.swing.JButton btnGeraRelatorioDeConsumo;
     private javax.swing.JButton btnManutencao;
     private javax.swing.JButton btnSuporte;
+    private javax.swing.JButton btnbtnGeraRelatorioDeFatura;
     private javax.swing.JLabel lblGerente;
     // End of variables declaration//GEN-END:variables
 }
