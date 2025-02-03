@@ -10,6 +10,7 @@ import com.mycompany.saneamento_basico_r.model.view.Cliente.FrClienteHistoricoCo
 import com.mycompany.saneamento_basico_r.model.view.Cliente.FrClientePendencias;
 import com.mycompany.saneamento_basico_r.controller.ClienteController;
 import com.mycompany.saneamento_basico_r.model.view.CadastrarEmpresa.FrCadastroEmpresaSaneamento;
+import com.mycompany.saneamento_basico_r.model.view.SuporteTecnico.FrClienteSuporteRequisicao;
 import com.mycompany.saneamento_basico_r.model.view.Planos.FrPlanosEscolher;
 import java.text.ParseException;
 import java.util.logging.Level;
@@ -209,7 +210,10 @@ public class FrGerenteFuncoes extends javax.swing.JDialog {
     }//GEN-LAST:event_btnAdicionarPlanosActionPerformed
 
     private void btnSuporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuporteActionPerformed
+        FrClienteSuporteRequisicao dlgSuporteRequisicao = new FrClienteSuporteRequisicao(this, true);
 
+        dlgSuporteRequisicao.setLocationRelativeTo(this);
+        dlgSuporteRequisicao.setVisible(true);
     }//GEN-LAST:event_btnSuporteActionPerformed
 
     private void btnManutencaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManutencaoActionPerformed

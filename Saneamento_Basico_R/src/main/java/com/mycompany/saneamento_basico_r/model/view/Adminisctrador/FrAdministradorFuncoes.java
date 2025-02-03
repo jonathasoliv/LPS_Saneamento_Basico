@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.text.MaskFormatter;
 import com.mycompany.saneamento_basico_r.model.view.CadastrarEmpresa.FrCadastroEmpresaSaneamento;
+import com.mycompany.saneamento_basico_r.model.view.SuporteTecnico.FrClienteSuporteRequisicao;
 
 /**
  *
@@ -137,13 +138,13 @@ public class FrAdministradorFuncoes extends javax.swing.JDialog {
                         .addComponent(btnManutencao)
                         .addGap(221, 221, 221))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnAdicionarPlanos)
-                        .addGap(263, 263, 263))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblAdministrador)
                             .addComponent(btnCadastrarRede))
-                        .addGap(189, 189, 189))))
+                        .addGap(189, 189, 189))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnAdicionarPlanos)
+                        .addGap(253, 253, 253))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,7 +181,10 @@ public class FrAdministradorFuncoes extends javax.swing.JDialog {
     }//GEN-LAST:event_btnCadastrarRedeActionPerformed
 
     private void btnSuporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuporteActionPerformed
-        
+        FrClienteSuporteRequisicao dlgSuporteRequisicao = new FrClienteSuporteRequisicao(this, true);
+
+        dlgSuporteRequisicao.setLocationRelativeTo(this);
+        dlgSuporteRequisicao.setVisible(true);
     }//GEN-LAST:event_btnSuporteActionPerformed
 
     private void btnAdicionarPlanosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarPlanosActionPerformed

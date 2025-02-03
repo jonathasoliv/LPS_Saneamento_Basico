@@ -5,6 +5,7 @@
  */
 package com.mycompany.saneamento_basico_r.model.view.Cliente;
 
+import com.mycompany.saneamento_basico_r.model.view.SuporteTecnico.FrClienteSuporteRequisicao;
 import com.mycompany.saneamento_basico_r.model.view.Cliente.FrClientePendencias;
 import com.mycompany.saneamento_basico_r.controller.ClienteController;
 import com.mycompany.saneamento_basico_r.model.view.Planos.FrPlanoConfirmacaoCancelamento;

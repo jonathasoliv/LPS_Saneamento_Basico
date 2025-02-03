@@ -5,6 +5,7 @@
  */
 package com.mycompany.saneamento_basico_r.model.view.Funcionario;
 
+import com.mycompany.saneamento_basico_r.model.view.SuporteTecnico.FrClienteSuporteRequisicao;
 import com.mycompany.saneamento_basico_r.model.view.Cliente.*;
 import com.mycompany.saneamento_basico_r.model.view.Cliente.FrClientePendencias;
 import com.mycompany.saneamento_basico_r.controller.ClienteController;
@@ -145,10 +146,10 @@ public class FrFuncionarioFuncoes extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSuporteActionPerformed
 
     private void btnCadastrarRedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarRedeActionPerformed
-        FrCadastroEmpresaSaneamento dlgEmpresaSaneamento = new FrCadastroEmpresaSaneamento(this, true);
+        FrClienteSuporteRequisicao dlgSuporteRequisicao = new FrClienteSuporteRequisicao(this, true);
 
-        dlgEmpresaSaneamento.setLocationRelativeTo(this);
-        dlgEmpresaSaneamento.setVisible(true);
+        dlgSuporteRequisicao.setLocationRelativeTo(this);
+        dlgSuporteRequisicao.setVisible(true);
     }//GEN-LAST:event_btnCadastrarRedeActionPerformed
 
     /**
