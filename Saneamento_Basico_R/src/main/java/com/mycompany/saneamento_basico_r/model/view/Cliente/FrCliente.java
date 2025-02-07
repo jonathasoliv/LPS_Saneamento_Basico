@@ -5,7 +5,7 @@
  */
 package com.mycompany.saneamento_basico_r.model.view.Cliente;
 
-import com.mycompany.saneamento_basico_r.model.view.Cliente.FrClienteCadastroResidencia;
+import com.mycompany.saneamento_basico_r.model.view.Cliente.FrClienteCadastro;
 import com.mycompany.saneamento_basico_r.controller.ClienteController;
 import com.mycompany.saneamento_basico_r.model.view.RecuperarSenha.FrRecuperarSenha;
 import java.text.ParseException;
@@ -210,7 +210,7 @@ public class FrCliente extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUsuarioRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioRegistrarActionPerformed
-        FrClienteCadastroResidencia dlgRegistrarCliente = new FrClienteCadastroResidencia(this, true);
+        FrClienteCadastro dlgRegistrarCliente = new FrClienteCadastro(this, true);
         
         dlgRegistrarCliente.setLocationRelativeTo(this);
         dlgRegistrarCliente.setVisible(true);

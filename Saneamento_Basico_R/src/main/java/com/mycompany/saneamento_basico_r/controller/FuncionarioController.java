@@ -24,9 +24,15 @@ public class FuncionarioController {
         repositorio = new FuncionarioDAO();
     }
 
-    public void cadastrarFuncionario(String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {
+    public void cadastrarFuncionario(String nome, String sexo, String idade,
+            String cpf, String dataNascimento, String endereco, String email,
+            String senha, String telefone, String cidade, String bairro,
+            
+            String unidadeConsumidora) {
         ValidateFuncionario valid = new ValidateFuncionario();
-        Funcionario novoFuncionario = valid.validaCamposEntrada(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora);
+        Funcionario novoFuncionario = valid.validaCamposEntrada(nome, sexo,
+                idade, cpf, dataNascimento, endereco, email, senha, telefone,
+                cidade, bairro, unidadeConsumidora);
 
         if (repositorio.findByEndereco(endereco) == null) {
             repositorio.save(novoFuncionario);
@@ -35,10 +41,18 @@ public class FuncionarioController {
         }
     }
 
-    public void atualizarFuncionario(int idFuncionario, String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {
+    public void atualizarFuncionario(String idFuncionario, String nome,
+            String sexo, String idade, String cpf, String dataNascimento,
+            String endereco, String email, String senha, String telefone,
+            String cidade, String bairro, String unidadeConsumidora)
+    {
         ValidateFuncionario valid = new ValidateFuncionario();
-        Funcionario novoFuncionario = valid.validaCamposEntrada(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora);
-        novoFuncionario.setId(idFuncionario);
+        
+        Funcionario novoFuncionario = valid.validaCamposEntrada(nome, sexo,
+                idade, cpf, dataNascimento, endereco, email, senha, telefone,
+                cidade, bairro, unidadeConsumidora);
+        
+        novoFuncionario.setId(Integer.parseInt(idFuncionario));
         
         repositorio.update(novoFuncionario);
     }

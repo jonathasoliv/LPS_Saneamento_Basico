@@ -4,18 +4,26 @@
  */
 package com.mycompany.saneamento_basico_r.model.view.Cliente;
 
+import com.mycompany.saneamento_basico_r.controller.ClienteController;
+
 /**
  *
  * @author Guize
  */
-public class FrClienteCadastroResidencia extends javax.swing.JDialog {
+public class FrClienteCadastro extends javax.swing.JDialog {
 
-    /**
-     * Creates new form CadastroCliente2
-     */
-    public FrClienteCadastroResidencia(java.awt.Dialog parent, boolean modal) {
+    ClienteController clienteController;
+    
+    public FrClienteCadastro(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
+        
+        clienteController = new ClienteController();
+
         initComponents();
+        //this.adicionarMascaraNosCampos();
+
+        //edtListagem.setText(profController.imprimirListaProfessores());
+        
     }
 
     /**
@@ -33,8 +41,8 @@ public class FrClienteCadastroResidencia extends javax.swing.JDialog {
         lblClienteSexo = new javax.swing.JLabel();
         fClienteSexo = new javax.swing.JFormattedTextField();
         btnClienteRegistrar = new javax.swing.JButton();
-        fClienteNascimento = new javax.swing.JFormattedTextField();
-        lblClienteNascimento = new javax.swing.JLabel();
+        fClienteIdade = new javax.swing.JFormattedTextField();
+        lblIdade = new javax.swing.JLabel();
         lblClienteEndereco = new javax.swing.JLabel();
         fClienteEndereco = new javax.swing.JFormattedTextField();
         lblClienteUnidadeConsumidora = new javax.swing.JLabel();
@@ -85,14 +93,14 @@ public class FrClienteCadastroResidencia extends javax.swing.JDialog {
             }
         });
 
-        fClienteNascimento.addActionListener(new java.awt.event.ActionListener() {
+        fClienteIdade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fClienteNascimentoActionPerformed(evt);
+                fClienteIdadeActionPerformed(evt);
             }
         });
 
-        lblClienteNascimento.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        lblClienteNascimento.setText("Data de nascimento:");
+        lblIdade.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblIdade.setText("Idade");
 
         lblClienteEndereco.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         lblClienteEndereco.setText("Endereço:");
@@ -186,9 +194,9 @@ public class FrClienteCadastroResidencia extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblClienteUnidadeConsumidora)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblClienteNascimento)
+                                .addComponent(lblIdade)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(fClienteNascimento))
+                                .addComponent(fClienteIdade))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblClienteEndereco)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -270,8 +278,8 @@ public class FrClienteCadastroResidencia extends javax.swing.JDialog {
                     .addComponent(fClienteUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblClienteNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fClienteNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fClienteIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblClienteCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fClienteCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -313,12 +321,19 @@ public class FrClienteCadastroResidencia extends javax.swing.JDialog {
     }//GEN-LAST:event_fClienteSexoActionPerformed
 
     private void btnClienteRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteRegistrarActionPerformed
-        // TODO add your handling code here:
+        //try {
+            clienteController.cadastrarCliente(fClienteNome.getText(),
+                    fClienteSexo.getText(), fClienteIdade.getText(),
+                    fClienteCPF.getText(), fClienteEndereco.getText(),
+                    fClienteEmail.getText(), fClienteSenha.getText(),
+                    fClienteTelefone.getText(), fClienteCidade.getText(),
+                    fClienteBairro.getText(), fClienteUnidadeConsumidora.getText());
+
     }//GEN-LAST:event_btnClienteRegistrarActionPerformed
 
-    private void fClienteNascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fClienteNascimentoActionPerformed
+    private void fClienteIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fClienteIdadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_fClienteNascimentoActionPerformed
+    }//GEN-LAST:event_fClienteIdadeActionPerformed
 
     private void fClienteEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fClienteEnderecoActionPerformed
         // TODO add your handling code here:
@@ -373,13 +388,13 @@ public class FrClienteCadastroResidencia extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrClienteCadastroResidencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrClienteCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrClienteCadastroResidencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrClienteCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrClienteCadastroResidencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrClienteCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrClienteCadastroResidencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrClienteCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -401,7 +416,7 @@ public class FrClienteCadastroResidencia extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                FrClienteCadastroResidencia dialog = new FrClienteCadastroResidencia(new javax.swing.JDialog(), true);
+                FrClienteCadastro dialog = new FrClienteCadastro(new javax.swing.JDialog(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -420,7 +435,7 @@ public class FrClienteCadastroResidencia extends javax.swing.JDialog {
     private javax.swing.JFormattedTextField fClienteCidade;
     private javax.swing.JFormattedTextField fClienteEmail;
     private javax.swing.JFormattedTextField fClienteEndereco;
-    private javax.swing.JFormattedTextField fClienteNascimento;
+    private javax.swing.JFormattedTextField fClienteIdade;
     private javax.swing.JFormattedTextField fClienteNome;
     private javax.swing.JFormattedTextField fClienteSenha;
     private javax.swing.JFormattedTextField fClienteSexo;
@@ -432,13 +447,13 @@ public class FrClienteCadastroResidencia extends javax.swing.JDialog {
     private javax.swing.JLabel lblClienteCidade;
     private javax.swing.JLabel lblClienteEmail;
     private javax.swing.JLabel lblClienteEndereco;
-    private javax.swing.JLabel lblClienteNascimento;
     private javax.swing.JLabel lblClienteNome;
     private javax.swing.JLabel lblClienteSenha;
     private javax.swing.JLabel lblClienteSexo;
     private javax.swing.JLabel lblClienteTelefone;
     private javax.swing.JLabel lblClienteUnidadeConsumidora;
     private javax.swing.JLabel lblClienteUsuario;
+    private javax.swing.JLabel lblIdade;
     private javax.swing.JLabel lblLoginCliente;
     // End of variables declaration//GEN-END:variables
 }

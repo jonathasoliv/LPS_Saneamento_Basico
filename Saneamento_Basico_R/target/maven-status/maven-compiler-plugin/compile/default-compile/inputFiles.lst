@@ -7,6 +7,7 @@ C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\valid\ValidateAdministrador.java
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\view\Cliente\FrClienteHistoricoConsumo.java
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\entities\Administrador.java
+C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\view\SuporteTecnico\FrClienteSuporteRequisicao.java
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\entities\Funcionario.java
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\view\Gerente\FrGerente.java
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\controller\Util.java
@@ -27,6 +28,7 @@ C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\view\Adminisctrador\FrAdministradorAvisoManutencao.java
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\view\Funcionario\FrFuncionarioFuncoes.java
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\entities\Cliente.java
+C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\view\Planos\FrAdicionarPlanos.java
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\view\CadastrarEmpresa\FrCadastroEmpresaSaneamento.java
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\view\Cliente\FrClientePendencias.java
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\view\Adminisctrador\FrAdministradorFuncoes.java
@@ -38,8 +40,8 @@ C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\entities\Gerente.java
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\view\Planos\FrPlanosPagamento.java
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\view\RecuperarSenha\FrRecuperarSenha.java
+C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\view\Funcionario\FrResponderMsgSuporte.java
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\view\Cliente\FrClienteFuncoes.java
-C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\view\Cliente\FrClienteSuporteRequisicao.java
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\view\Planos\FrPlanoConfirmacaoCancelamento.java
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\model\view\Funcionario\FrFuncionarioCadastro.java
 C:\Users\Guize\Documents\Code\LPS\LPS_Saneamento_Basico\Saneamento_Basico_R\src\main\java\com\mycompany\saneamento_basico_r\controller\AdministradorController.java

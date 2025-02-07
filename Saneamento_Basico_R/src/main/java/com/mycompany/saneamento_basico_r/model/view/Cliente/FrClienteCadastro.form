@@ -30,9 +30,9 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="lblClienteUnidadeConsumidora" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblClienteNascimento" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblIdade" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="fClienteNascimento" max="32767" attributes="0"/>
+                              <Component id="fClienteIdade" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="lblClienteEndereco" min="-2" max="-2" attributes="0"/>
@@ -98,16 +98,6 @@
                           </Group>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="lblClienteNome1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jCheckBoxResidencial" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jCheckBoxResidencial1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jCheckBoxResidencial2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
@@ -116,10 +106,10 @@
               <Component id="btnClienteRegistrar" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="375" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
-              <Component id="lblLoginCliente" min="-2" pref="238" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="lblLoginCliente" min="-2" pref="238" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="316" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
@@ -133,16 +123,9 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="lblLoginCliente" min="-2" pref="45" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBoxResidencial" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBoxResidencial1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBoxResidencial2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblClienteNome1" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblClienteNome" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="fClienteNome" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -158,8 +141,8 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblClienteNascimento" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                  <Component id="fClienteNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblIdade" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="fClienteIdade" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblClienteCPF" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="fClienteCPF" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -243,17 +226,17 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClienteRegistrarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="fClienteNascimento">
+    <Component class="javax.swing.JFormattedTextField" name="fClienteIdade">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fClienteNascimentoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fClienteIdadeActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblClienteNascimento">
+    <Component class="javax.swing.JLabel" name="lblIdade">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Data de nascimento:"/>
+        <Property name="text" type="java.lang.String" value="Idade"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblClienteEndereco">
@@ -372,32 +355,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fClienteEmailActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBoxResidencial">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Residencial"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBoxResidencial1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Comercial"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxResidencial1ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBoxResidencial2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Industrial"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblClienteNome1">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Dialog" size="18" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Tipo de estabelecimento:"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>

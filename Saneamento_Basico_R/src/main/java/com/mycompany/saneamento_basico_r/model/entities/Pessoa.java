@@ -9,14 +9,17 @@ package com.mycompany.saneamento_basico_r.model.entities;
  * @author JonathasOliveira
  */
 import java.util.Scanner;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
 public class Pessoa {
+    @Id
     
     String nome;
     String sexo;
     int idade;
     String cpf;
-    private String dataNascimento;
     private String endereco;
     private String email;
     private String senha;
@@ -30,7 +33,6 @@ public class Pessoa {
         this.sexo = " ";
         this.idade = 0;
         this.cpf = "###.###.###-##";
-        this.dataNascimento = "00-00-0000";
         this.endereco = " ";
         this.email = " ";
         this.senha = " ";
@@ -40,12 +42,11 @@ public class Pessoa {
         this.unidadeConsumidora = " ";
     }
 
-    public Pessoa(String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {
+    public Pessoa(String nome, String sexo, String idade, String cpf, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {
         this.nome = " ";
         this.sexo = " ";
         this.idade = 0;
         this.cpf = "###.###.###-##";
-        this.dataNascimento = "00-00-0000";  /*dia - mes - ano*/
         this.endereco = " ";
         this.email = " ";
         this.senha = " ";
@@ -61,7 +62,6 @@ public class Pessoa {
         +"Sexo: "+ this.getSexo() + "\n"
         +"Idade: "+ this.getIdade()+"\n"
         +"Cpf: "+ this.getCpf()+"\n"
-        +"Data de Nascimento: "+ this.getDataNascimento()+"\n"
         +"Endereco: "+ this.getEndereco()+"\n"
         +"Email: "+ this.getEmail()+"\n"
         +"Senha: "+ this.getSenha()+"\n"
@@ -83,8 +83,6 @@ public class Pessoa {
         else if(this.getCpf() != outro.getCpf())
             return false;
         else if(this.getSexo() != outro.getSexo())
-            return false;
-        else if(this.getDataNascimento() != outro.getDataNascimento())
             return false;
         else if(this.getEndereco() != outro.getEndereco())
             return false;
@@ -145,20 +143,6 @@ public class Pessoa {
      */
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-    
-    /**
-     * @return the dataNascimento
-     */
-    public String getDataNascimento() {
-        return dataNascimento;
-    }
-
-    /**
-     * @param dataNascimento the dataNascimento to set
-     */
-    public void setDataNascimento(String dataNascimento) {
-        this.dataNascimento = dataNascimento;
     }
 
     /**

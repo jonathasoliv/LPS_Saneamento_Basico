@@ -31,7 +31,7 @@ public class AdministradorDAO {
     public void save(Object obj) {
         Administrador administrador = (Administrador) obj;
 
-        sql = "INSERT INTO administrador(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora) "
+        sql = "INSERT INTO administrador(nome, sexo, idade, cpf, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora) "
                 + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             connection = Persistencia.getConnection();
@@ -41,14 +41,13 @@ public class AdministradorDAO {
             statement.setString(2, String.valueOf(administrador.getSexo()));
             statement.setInt(3, administrador.getIdade());
             statement.setString(4,administrador.getCpf());
-            statement.setString(5, administrador.getDataNascimento());
-            statement.setString(6, administrador.getEndereco());
-            statement.setString(7, administrador.getEmail());
-            statement.setString(8, administrador.getSenha());
-            statement.setString(9, administrador.getTelefone());
-            statement.setString(10, administrador.getCidade());
-            statement.setString(11, administrador.getBairro());
-            statement.setString(12, administrador.getUnidadeConsumidora());
+            statement.setString(5, administrador.getEndereco());
+            statement.setString(6, administrador.getEmail());
+            statement.setString(7, administrador.getSenha());
+            statement.setString(8, administrador.getTelefone());
+            statement.setString(9, administrador.getCidade());
+            statement.setString(10, administrador.getBairro());
+            statement.setString(11, administrador.getUnidadeConsumidora());
 
             statement.execute();
             statement.close();
@@ -64,7 +63,7 @@ public class AdministradorDAO {
         Administrador administrador = (Administrador) obj;
 
         sql = "UPDATE administrador "
-                + "SET nome=?, sexo=?, idade=?, cpf=?, dataNascimento=?, endereco=?, email=?, senha=?, telefone=? , cidade=?, bairro=?, unidadeConsumidora=?"
+                + "SET nome=?, sexo=?, idade=?, cpf=?, endereco=?, email=?, senha=?, telefone=? , cidade=?, bairro=?, unidadeConsumidora=?"
                 + "WHERE id = ?";
         try {
             connection = Persistencia.getConnection();
@@ -74,16 +73,15 @@ public class AdministradorDAO {
             statement.setString(2, String.valueOf(administrador.getSexo()));
             statement.setInt(3, administrador.getIdade());
             statement.setString(4,administrador.getCpf());
-            statement.setString(5, administrador.getDataNascimento());
-            statement.setString(6, administrador.getEndereco());
-            statement.setString(7, administrador.getEmail());
-            statement.setString(8, administrador.getSenha());
-            statement.setString(9, administrador.getTelefone());
-            statement.setString(10, administrador.getCidade());
-            statement.setString(11, administrador.getBairro());
-            statement.setString(12, administrador.getUnidadeConsumidora());
+            statement.setString(5, administrador.getEndereco());
+            statement.setString(6, administrador.getEmail());
+            statement.setString(7, administrador.getSenha());
+            statement.setString(8, administrador.getTelefone());
+            statement.setString(9, administrador.getCidade());
+            statement.setString(10, administrador.getBairro());
+            statement.setString(11, administrador.getUnidadeConsumidora());
 
-            statement.setInt(13, administrador.getId());
+            statement.setInt(12, administrador.getId());
 
             statement.execute();
             statement.close();
@@ -104,12 +102,11 @@ public class AdministradorDAO {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Administrador administrador = new Administrador(
-                        resultSet.getInt("id"),
+                        resultSet.getString("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("sexo"),
-                        resultSet.getInt("idade"),
+                        resultSet.getString("idade"),
                         resultSet.getString("cpf"),
-                        resultSet.getString("dataNascimento"),
                         resultSet.getString("endereco"),
                         resultSet.getString("email"),
                         resultSet.getString("senha"),
@@ -145,12 +142,11 @@ public class AdministradorDAO {
             Administrador foundAdministrador = null;
             while (resultSet.next()) {
                 foundAdministrador = new Administrador(
-                        resultSet.getInt("id"),
+                        resultSet.getString("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("sexo"),
-                        resultSet.getInt("idade"),
+                        resultSet.getString("idade"),
                         resultSet.getString("cpf"),
-                        resultSet.getString("dataNascimento"),
                         resultSet.getString("endereco"),
                         resultSet.getString("email"),
                         resultSet.getString("senha"),
@@ -181,12 +177,11 @@ public class AdministradorDAO {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 administrador = new Administrador(
-                        resultSet.getInt("id"),
+                        resultSet.getString("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("sexo"),
-                        resultSet.getInt("idade"),
+                        resultSet.getString("idade"),
                         resultSet.getString("cpf"),
-                        resultSet.getString("dataNascimento"),
                         resultSet.getString("endereco"),
                         resultSet.getString("email"),
                         resultSet.getString("senha"),

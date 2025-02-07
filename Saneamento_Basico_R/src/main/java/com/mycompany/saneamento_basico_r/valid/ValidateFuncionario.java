@@ -15,7 +15,7 @@ import java.time.format.DateTimeParseException;
  * @author JonathasOliveira
  */
 public class ValidateFuncionario {
-    public Funcionario validaCamposEntrada(String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora){
+    public Funcionario validaCamposEntrada(String nome, String sexo, String idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora){
         
         Funcionario funcionario = new Funcionario();
         
@@ -30,9 +30,9 @@ public class ValidateFuncionario {
         }
         funcionario.setSexo(sexoUpperCase);
 
-        if (idade < 0)
+        /*if (idade < 0)
             throw new FuncionarioException("Error - Valor inválido no campo 'idade'.");
-        funcionario.setIdade(idade); 
+        funcionario.setIdade(idade); */
         
         /*if (cpf.isEmpty() || validaCPF(cpf)) {
             throw new FuncionarioException("Error - CPF inválido no campo 'cpf'.");

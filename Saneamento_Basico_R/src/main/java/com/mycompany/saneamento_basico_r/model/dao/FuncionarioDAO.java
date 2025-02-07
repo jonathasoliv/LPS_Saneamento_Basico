@@ -30,8 +30,8 @@ public class FuncionarioDAO implements IDao{
     public void save(Object obj) {
         Funcionario funcionario = (Funcionario) obj;
 
-        sql = "INSERT INTO funcionario(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora) "
-                + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+        sql = "INSERT INTO funcionario(nome, sexo, idade, cpf, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora) "
+                + "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         try {
             connection = Persistencia.getConnection();
             statement = connection.prepareStatement(sql);
@@ -40,14 +40,13 @@ public class FuncionarioDAO implements IDao{
             statement.setString(2, String.valueOf(funcionario.getSexo()));
             statement.setInt(3, funcionario.getIdade());
             statement.setString(4,funcionario.getCpf());
-            statement.setString(5, funcionario.getDataNascimento());
-            statement.setString(6, funcionario.getEndereco());
-            statement.setString(7, funcionario.getEmail());
-            statement.setString(8, funcionario.getSenha());
-            statement.setString(9, funcionario.getTelefone());
-            statement.setString(10, funcionario.getCidade());
-            statement.setString(11, funcionario.getBairro());
-            statement.setString(12, funcionario.getUnidadeConsumidora());
+            statement.setString(5, funcionario.getEndereco());
+            statement.setString(6, funcionario.getEmail());
+            statement.setString(7, funcionario.getSenha());
+            statement.setString(8, funcionario.getTelefone());
+            statement.setString(9, funcionario.getCidade());
+            statement.setString(10, funcionario.getBairro());
+            statement.setString(11, funcionario.getUnidadeConsumidora());
 
             statement.execute();
             statement.close();
@@ -63,7 +62,7 @@ public class FuncionarioDAO implements IDao{
         Funcionario funcionario = (Funcionario) obj;
 
         sql = "UPDATE funcionario "
-                + "SET nome=?, sexo=?, idade=?, cpf=?, dataNascimento=?, endereco=?, email=?, senha=?, telefone=? , cidade=?, bairro=?, unidadeConsumidora=?"
+                + "SET nome=?, sexo=?, idade=?, cpf=?, endereco=?, email=?, senha=?, telefone=? , cidade=?, bairro=?, unidadeConsumidora=?"
                 + "WHERE id = ?";
         try {
             connection = Persistencia.getConnection();
@@ -73,16 +72,15 @@ public class FuncionarioDAO implements IDao{
             statement.setString(2, String.valueOf(funcionario.getSexo()));
             statement.setInt(3, funcionario.getIdade());
             statement.setString(4,funcionario.getCpf());
-            statement.setString(5, funcionario.getDataNascimento());
-            statement.setString(6, funcionario.getEndereco());
-            statement.setString(7, funcionario.getEmail());
-            statement.setString(8, funcionario.getSenha());
-            statement.setString(9, funcionario.getTelefone());
-            statement.setString(10, funcionario.getCidade());
-            statement.setString(11, funcionario.getBairro());
-            statement.setString(12, funcionario.getUnidadeConsumidora());
+            statement.setString(5, funcionario.getEndereco());
+            statement.setString(6, funcionario.getEmail());
+            statement.setString(7, funcionario.getSenha());
+            statement.setString(8, funcionario.getTelefone());
+            statement.setString(9, funcionario.getCidade());
+            statement.setString(10, funcionario.getBairro());
+            statement.setString(11, funcionario.getUnidadeConsumidora());
 
-            statement.setInt(13, funcionario.getId());
+            statement.setInt(12, funcionario.getId());
 
             statement.execute();
             statement.close();
@@ -103,12 +101,11 @@ public class FuncionarioDAO implements IDao{
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Funcionario funcionario = new Funcionario(
-                        resultSet.getInt("id"),
+                        resultSet.getString("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("sexo"),
-                        resultSet.getInt("idade"),
+                        resultSet.getString("idade"),
                         resultSet.getString("cpf"),
-                        resultSet.getString("dataNascimento"),
                         resultSet.getString("endereco"),
                         resultSet.getString("email"),
                         resultSet.getString("senha"),
@@ -144,12 +141,11 @@ public class FuncionarioDAO implements IDao{
             Funcionario foundFuncionario = null;
             while (resultSet.next()) {
                 foundFuncionario = new Funcionario(
-                        resultSet.getInt("id"),
+                        resultSet.getString("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("sexo"),
-                        resultSet.getInt("idade"),
+                        resultSet.getString("idade"),
                         resultSet.getString("cpf"),
-                        resultSet.getString("dataNascimento"),
                         resultSet.getString("endereco"),
                         resultSet.getString("email"),
                         resultSet.getString("senha"),
@@ -180,12 +176,11 @@ public class FuncionarioDAO implements IDao{
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 funcionario = new Funcionario(
-                        resultSet.getInt("id"),
+                        resultSet.getString("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("sexo"),
-                        resultSet.getInt("idade"),
+                        resultSet.getString("idade"),
                         resultSet.getString("cpf"),
-                        resultSet.getString("dataNascimento"),
                         resultSet.getString("endereco"),
                         resultSet.getString("email"),
                         resultSet.getString("senha"),

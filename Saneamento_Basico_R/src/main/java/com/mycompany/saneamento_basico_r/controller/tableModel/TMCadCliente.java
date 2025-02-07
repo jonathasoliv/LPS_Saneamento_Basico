@@ -19,14 +19,13 @@ public class TMCadCliente extends AbstractTableModel {
     private final int COL_SEXO = 1;
     private final int COL_IDADE = 2;
     private final int COL_CPF = 3;
-    private final int COL_DATANASCIMENTO = 4;
-    private final int COL_ENDERECO = 5;
-    private final int COL_EMAIL = 6;
-    private final int COL_SENHA = 7;
-    private final int COL_TELEFONE = 8;
-    private final int COL_CIDADE = 9;
-    private final int COL_BAIRRO = 10;
-    private final int COL_UNIDADECONSUMIDORA = 11;
+    private final int COL_ENDERECO = 4;
+    private final int COL_EMAIL = 5;
+    private final int COL_SENHA = 6;
+    private final int COL_TELEFONE = 7;
+    private final int COL_CIDADE = 8;
+    private final int COL_BAIRRO = 9;
+    private final int COL_UNIDADECONSUMIDORA = 10;
 
     TMCadCliente(List<Cliente> lstClientes) {
     lista = lstClientes;
@@ -55,8 +54,6 @@ public class TMCadCliente extends AbstractTableModel {
                 return cliente.getIdade();
             case COL_CPF:
                 return cliente.getCpf();
-            case COL_DATANASCIMENTO:
-                return cliente.getDataNascimento();
             case COL_ENDERECO:
                 return cliente.getEndereco();
             case COL_EMAIL:
@@ -87,8 +84,6 @@ public class TMCadCliente extends AbstractTableModel {
                 return "Idade";
             case COL_CPF:
                 return "Cpf";
-            case COL_DATANASCIMENTO:
-                return "Data de Nascimento";
             case COL_ENDERECO:
                 return "Endereço";
             case COL_EMAIL:

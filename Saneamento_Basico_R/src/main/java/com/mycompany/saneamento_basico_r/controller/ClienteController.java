@@ -25,9 +25,15 @@ public class ClienteController {
         repositorio = new ClienteDAO();
     }
 
-    public void cadastrarCliente(String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {
+    public void cadastrarCliente(String nome, String sexo, String idade,
+            String cpf, String endereco, String email,
+            String senha, String telefone, String cidade, String bairro,
+            String unidadeConsumidora) {
+        
         ValidateCliente valid = new ValidateCliente();
-        Cliente novoCliente = valid.validaCamposEntrada(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora);
+        
+        Cliente novoCliente = valid.validaCamposEntrada(nome, sexo, idade, cpf,
+                endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora);
 
         if (repositorio.findByEndereco(endereco) == null) {
             repositorio.save(novoCliente);
@@ -36,9 +42,9 @@ public class ClienteController {
         }
     }
 
-    public void atualizarCliente(int idCliente, String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {
+    public void atualizarCliente(int idCliente, String nome, String sexo, String idade, String cpf, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {
         ValidateCliente valid = new ValidateCliente();
-        Cliente novoCliente = valid.validaCamposEntrada(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora);
+        Cliente novoCliente = valid.validaCamposEntrada(nome, sexo, idade, cpf, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora);
         novoCliente.setId(idCliente);
         
         repositorio.update(novoCliente);

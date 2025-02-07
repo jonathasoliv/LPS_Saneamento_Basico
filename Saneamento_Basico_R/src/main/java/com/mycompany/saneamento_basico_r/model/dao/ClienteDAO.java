@@ -32,8 +32,10 @@ public class ClienteDAO implements IDao {
     public void save(Object obj) {
         Cliente cliente = (Cliente) obj;
 
-        sql = "INSERT INTO cliente(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora) "
-                + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+        sql = "INSERT INTO cliente(nome, sexo, idade, cpf,"
+                + "endereco, email, senha, telefone, cidade,"
+                + "bairro, unidadeConsumidora) "
+                + "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         try {
             connection = Persistencia.getConnection();
             statement = connection.prepareStatement(sql);
@@ -42,14 +44,13 @@ public class ClienteDAO implements IDao {
             statement.setString(2, String.valueOf(cliente.getSexo()));
             statement.setInt(3, cliente.getIdade());
             statement.setString(4,cliente.getCpf());
-            statement.setString(5, cliente.getDataNascimento());
-            statement.setString(6, cliente.getEndereco());
-            statement.setString(7, cliente.getEmail());
-            statement.setString(8, cliente.getSenha());
-            statement.setString(9, cliente.getTelefone());
-            statement.setString(10, cliente.getCidade());
-            statement.setString(11, cliente.getBairro());
-            statement.setString(12, cliente.getUnidadeConsumidora());
+            statement.setString(5, cliente.getEndereco());
+            statement.setString(6, cliente.getEmail());
+            statement.setString(7, cliente.getSenha());
+            statement.setString(8, cliente.getTelefone());
+            statement.setString(9, cliente.getCidade());
+            statement.setString(10, cliente.getBairro());
+            statement.setString(11, cliente.getUnidadeConsumidora());
 
             statement.execute();
             statement.close();
@@ -65,7 +66,8 @@ public class ClienteDAO implements IDao {
         Cliente cliente = (Cliente) obj;
 
         sql = "UPDATE cliente "
-                + "SET nome=?, sexo=?, idade=?, cpf=?, dataNascimento=?, endereco=?, email=?, senha=?, telefone=? , cidade=?, bairro=?, unidadeConsumidora=?"
+                + "SET nome=?, sexo=?, idade=?, cpf=?, endereco=?, email=?,"
+                + "senha=?, telefone=? , cidade=?, bairro=?, unidadeConsumidora=?"
                 + "WHERE id = ?";
         try {
             connection = Persistencia.getConnection();
@@ -75,16 +77,15 @@ public class ClienteDAO implements IDao {
             statement.setString(2, String.valueOf(cliente.getSexo()));
             statement.setInt(3, cliente.getIdade());
             statement.setString(4,cliente.getCpf());
-            statement.setString(5, cliente.getDataNascimento());
-            statement.setString(6, cliente.getEndereco());
-            statement.setString(7, cliente.getEmail());
-            statement.setString(8, cliente.getSenha());
-            statement.setString(9, cliente.getTelefone());
-            statement.setString(10, cliente.getCidade());
-            statement.setString(11, cliente.getBairro());
-            statement.setString(12, cliente.getUnidadeConsumidora());
+            statement.setString(5, cliente.getEndereco());
+            statement.setString(6, cliente.getEmail());
+            statement.setString(7, cliente.getSenha());
+            statement.setString(8, cliente.getTelefone());
+            statement.setString(9, cliente.getCidade());
+            statement.setString(10, cliente.getBairro());
+            statement.setString(11, cliente.getUnidadeConsumidora());
 
-            statement.setInt(13, cliente.getId());
+            statement.setInt(12, cliente.getId());
 
             statement.execute();
             statement.close();
@@ -105,12 +106,11 @@ public class ClienteDAO implements IDao {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Cliente cliente = new Cliente(
-                        resultSet.getInt("id"),
+                        resultSet.getString("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("sexo"),
-                        resultSet.getInt("idade"),
+                        resultSet.getString("idade"),
                         resultSet.getString("cpf"),
-                        resultSet.getString("dataNascimento"),
                         resultSet.getString("endereco"),
                         resultSet.getString("email"),
                         resultSet.getString("senha"),
@@ -146,12 +146,11 @@ public class ClienteDAO implements IDao {
             Cliente foundCliente = null;
             while (resultSet.next()) {
                 foundCliente = new Cliente(
-                        resultSet.getInt("id"),
+                        resultSet.getString("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("sexo"),
-                        resultSet.getInt("idade"),
+                        resultSet.getString("idade"),
                         resultSet.getString("cpf"),
-                        resultSet.getString("dataNascimento"),
                         resultSet.getString("endereco"),
                         resultSet.getString("email"),
                         resultSet.getString("senha"),
@@ -182,12 +181,11 @@ public class ClienteDAO implements IDao {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 cliente = new Cliente(
-                        resultSet.getInt("id"),
+                        resultSet.getString("id"),
                         resultSet.getString("nome"),
                         resultSet.getString("sexo"),
-                        resultSet.getInt("idade"),
+                        resultSet.getString("idade"),
                         resultSet.getString("cpf"),
-                        resultSet.getString("dataNascimento"),
                         resultSet.getString("endereco"),
                         resultSet.getString("email"),
                         resultSet.getString("senha"),

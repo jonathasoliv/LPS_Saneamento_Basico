@@ -16,9 +16,14 @@ public class Administrador extends Pessoa{
         
     }
     
-    public Administrador(int id, String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {
-        super(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora);
-        this.id = id;
+    public Administrador(String id, String nome, String sexo, String idade,
+            String cpf, String endereco, String email,
+            String senha, String telefone, String cidade, String bairro,
+            String unidadeConsumidora)
+    {
+        super(nome, sexo, idade, cpf, endereco, email, senha, telefone,
+                cidade, bairro, unidadeConsumidora);
+        this.id = Integer.parseInt(id);
         
     }
     

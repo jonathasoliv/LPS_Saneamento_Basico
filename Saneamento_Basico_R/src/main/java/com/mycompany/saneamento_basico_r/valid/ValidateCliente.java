@@ -16,7 +16,7 @@ import java.time.format.DateTimeParseException;
  */
 public class ValidateCliente {
     
-    public Cliente validaCamposEntrada(String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora){
+    public Cliente validaCamposEntrada(String nome, String sexo, String idade, String cpf, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora){
         
         Cliente cliente = new Cliente();
         
@@ -31,9 +31,9 @@ public class ValidateCliente {
         }
         cliente.setSexo(sexoUpperCase);
 
-        if (idade < 0)
+        /*if (idade < 0)
             throw new ClienteException("Error - Valor inválido no campo 'idade'.");
-        cliente.setIdade(idade); 
+        cliente.setIdade(idade); */
         
         /*if (cpf.isEmpty() || validaCPF(cpf)) {
             throw new ClienteException("Error - CPF inválido no campo 'cpf'.");
@@ -41,14 +41,14 @@ public class ValidateCliente {
         cliente.setCpf(cpf);
         */
         
-        if (dataNascimento.isEmpty()) {
+        /*if (dataNascimento.isEmpty()) {
         throw new ClienteException("Error - Campo vazio: 'dataNascimento'.");
         }
         try {
             LocalDate.parse(dataNascimento, DateTimeFormatter.ofPattern("dd-MM-yyyy")); //dia, mes, ano
         } catch (DateTimeParseException e) {
             throw new ClienteException("Error - Data de nascimento inválida no campo 'dataNascimento'.");
-        }
+        }*/
         
         if (endereco.isEmpty()) {
             throw new ClienteException("Error - Campo vazio: 'endereco'.");
