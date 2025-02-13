@@ -322,12 +322,13 @@ public class FrClienteCadastro extends javax.swing.JDialog {
 
     private void btnClienteRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteRegistrarActionPerformed
         //try {
-            clienteController.cadastrarCliente(fClienteNome.getText(),
-                    fClienteSexo.getText(), fClienteIdade.getText(),
-                    fClienteCPF.getText(), fClienteEndereco.getText(),
-                    fClienteEmail.getText(), fClienteSenha.getText(),
-                    fClienteTelefone.getText(), fClienteCidade.getText(),
-                    fClienteBairro.getText(), fClienteUnidadeConsumidora.getText());
+            clienteController.cadastrarCliente(
+                    fClienteNome.getText(), fClienteSexo.getText(),
+                    fClienteIdade.getText(), fClienteCPF.getText(),
+                    fClienteEndereco.getText(), fClienteEmail.getText(),
+                    fClienteSenha.getText(), fClienteTelefone.getText(),
+                    fClienteCidade.getText(), fClienteBairro.getText(),
+                    fClienteUnidadeConsumidora.getText());
 
     }//GEN-LAST:event_btnClienteRegistrarActionPerformed
 

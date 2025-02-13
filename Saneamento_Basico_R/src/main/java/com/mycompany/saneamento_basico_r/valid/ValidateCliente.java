@@ -20,7 +20,7 @@ public class ValidateCliente {
         
         Cliente cliente = new Cliente();
         
-        if (nome.isEmpty())
+        /*if (nome.isEmpty())
             throw new ClienteException("Error - Campo vazio: 'nome'.");
         cliente.setNome(nome);
         
@@ -31,24 +31,14 @@ public class ValidateCliente {
         }
         cliente.setSexo(sexoUpperCase);
 
-        /*if (idade < 0)
+        if (Integer.parseInt(idade) < 0)
             throw new ClienteException("Error - Valor inválido no campo 'idade'.");
-        cliente.setIdade(idade); */
+        cliente.setIdade(Integer.parseInt(idade));
         
-        /*if (cpf.isEmpty() || validaCPF(cpf)) {
+        if (cpf.isEmpty()/* || validaCPF(cpf)) {
             throw new ClienteException("Error - CPF inválido no campo 'cpf'.");
         }
         cliente.setCpf(cpf);
-        */
-        
-        /*if (dataNascimento.isEmpty()) {
-        throw new ClienteException("Error - Campo vazio: 'dataNascimento'.");
-        }
-        try {
-            LocalDate.parse(dataNascimento, DateTimeFormatter.ofPattern("dd-MM-yyyy")); //dia, mes, ano
-        } catch (DateTimeParseException e) {
-            throw new ClienteException("Error - Data de nascimento inválida no campo 'dataNascimento'.");
-        }*/
         
         if (endereco.isEmpty()) {
             throw new ClienteException("Error - Campo vazio: 'endereco'.");
@@ -62,6 +52,7 @@ public class ValidateCliente {
         }
         
         if (senha.isEmpty() || senha.length() < 8) { //senha com 8 caracteres
+            System.out.println(senha);
             throw new ClienteException("Error - Senha inválida no campo 'senha'.");
         }
         
@@ -81,7 +72,7 @@ public class ValidateCliente {
         }
         if (bairro.length() > 100) { // Limite de comprimento máximo (altere conforme necessário)
             throw new ClienteException("Error - Bairro muito longo no campo 'bairro'.");
-        }
+        }*/
 
         return cliente;
     }

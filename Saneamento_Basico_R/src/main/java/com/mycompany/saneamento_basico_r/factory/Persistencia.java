@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 public class Persistencia {
     private static Persistencia instance = null;
     private Connection connection = null;
-    private static final String DB_URL = "//nome do banco de dados";
+    private static final String DB_URL = "TesteDB";
 
     private Persistencia() {
         try {

@@ -25,10 +25,12 @@ public class ClienteController {
         repositorio = new ClienteDAO();
     }
 
-    public void cadastrarCliente(String nome, String sexo, String idade,
+    public void cadastrarCliente(
+            String nome, String sexo, String idade,
             String cpf, String endereco, String email,
             String senha, String telefone, String cidade, String bairro,
-            String unidadeConsumidora) {
+            String unidadeConsumidora)
+    {
         
         ValidateCliente valid = new ValidateCliente();
         
