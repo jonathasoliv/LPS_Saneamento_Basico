@@ -31,8 +31,16 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="btnSuporte" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="254" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="btnSuporte" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="254" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="btnCadastrarRede" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -43,7 +51,9 @@
               <Component id="lblFuncionario" min="-2" pref="45" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               <Component id="btnSuporte" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="244" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+              <Component id="btnCadastrarRede" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="159" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -67,6 +77,17 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Fun&#xe7;&#xf5;es Funcion&#xe1;rio"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnCadastrarRede">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Cadastrar Rede de Saneamento"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarRedeActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

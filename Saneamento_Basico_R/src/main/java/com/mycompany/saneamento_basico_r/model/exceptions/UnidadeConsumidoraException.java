@@ -8,6 +8,8 @@ package com.mycompany.saneamento_basico_r.model.exceptions;
  *
  * @author JonathasOliveira
  */
-public class UnidadeConsumidoraException {
-    
+public class UnidadeConsumidoraException extends RuntimeException{
+    public UnidadeConsumidoraException(String msg){
+        super(msg);
+    } 
 }

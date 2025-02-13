@@ -1,11 +1,25 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.mycompany.saneamento_basico_r.model.dao;
 
 import com.mycompany.saneamento_basico_r.factory.DatabaseJPA;
+import com.mycompany.saneamento_basico_r.factory.Persistencia;
 import com.mycompany.saneamento_basico_r.model.entities.Cliente;
-import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
 import javax.persistence.EntityManager;
+
+/**
+ *
+ * @author JonathasOliveira
+ */
 
 public class ClienteDao implements IDao<Cliente> {
 

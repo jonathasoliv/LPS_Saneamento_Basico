@@ -4,6 +4,8 @@
  */
 package com.mycompany.saneamento_basico_r.model.entities;
 
+import com.mycompany.saneamento_basico_r.model.entities.Usuario;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,9 +27,11 @@ public class Cliente extends Usuario {
  
     private String historicoConsumo;
 
-    public Cliente(String cpf, String nome, String email, String senha, LocalDate dataNascimento,
-            String telefone, String endereco, LocalDateTime deletadoEm, String historicoConsumo) {
-        super(0, cpf, nome, email, senha, dataNascimento, telefone, endereco, deletadoEm);
+    public Cliente(String nome, String sexo, int idade, String cpf, String endereco,
+            String email, String senha, String telefone, String cidade, String bairro, 
+            String unidadeConsumidora, LocalDateTime deletadoEm, String historicoConsumo) {
+        super(0, nome, sexo, idade, cpf, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora, deletadoEm);
+        
         this.historicoConsumo = historicoConsumo;
     }
 

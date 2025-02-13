@@ -8,7 +8,7 @@ package com.mycompany.saneamento_basico_r.model.exceptions;
  *
  * @author JonathasOliveira
  */
-public class GerenteException extends UsuarioException{
+public class GerenteException extends RuntimeException{
     public GerenteException(String msg){
         super(msg);
     } 

@@ -18,13 +18,18 @@ public class TMFuncionario extends AbstractTableModel {
     private List<Funcionario> lista;
 
     private final int id = 0;
-    private final int cpf = 1;
-    private final int nome = 2;
-    private final int email = 3;
-    private final int dataNascimento = 4;
-    private final int telefone = 5;
-    private final int endereco = 6;
-    private final int dataContratacao = 7;
+    private final int nome = 1;
+    private final int sexo = 2;
+    private final int idade = 3;
+    private final int cpf = 4;
+    private final int endereco = 5;
+    private final int email = 6;
+    private final int senha = 7;
+    private final int telefone = 8;
+    private final int cidade = 9;
+    private final int bairro = 10;
+    private final int unidadeConsumidora = 11;
+    private final int dataContratacao = 12;
 
     public TMFuncionario(List<Funcionario> listaFuncionarios) {
         lista = listaFuncionarios;
@@ -32,7 +37,7 @@ public class TMFuncionario extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 8;
+        return 13;
     }
 
     @Override
@@ -45,18 +50,26 @@ public class TMFuncionario extends AbstractTableModel {
         switch (columnIndex) {
             case id:
                 return "ID";
-            case cpf:
-                return "CPF";
             case nome:
                 return "Nome";
+            case sexo:
+                return "Sexo";
+            case idade:
+                return "Idade";
+            case cpf:
+                return "CPF";
+            case endereco:
+                return "Endereco";
             case email:
-                return "Email";
-            case dataNascimento:
-                return "Data de Nascimento";
+                return "E-mail";
+            case senha:
+                return "Senha";
             case telefone:
                 return "Telefone";
-            case endereco:
-                return "Endereço";
+            case cidade:
+                return "Cidade";
+            case bairro:
+                return "Bairro";
             case dataContratacao:
                 return "Data de Contratação";
             default:
@@ -77,20 +90,26 @@ public class TMFuncionario extends AbstractTableModel {
                     return aux;
                 case id:
                     return aux.getId();
-                case cpf:
-                    return aux.getCpf().replaceAll("(\\d{3})(\\d{3})(\\d{3})(\\d{2})", "$1.$2.$3-$4");
                 case nome:
                     return aux.getNome();
-                case email:
-                    return aux.getEmail();
-                case dataNascimento:
-                    return aux.getDataNascimento() != null
-                            ? aux.getDataNascimento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
-                            : "";
-                case telefone:
-                    return aux.getTelefone();
+                case sexo:
+                    return aux.getSexo();
+                case idade:
+                    return aux.getIdade();
+                case cpf:
+                    return aux.getCpf().replaceAll("(\\d{3})(\\d{3})(\\d{3})(\\d{2})", "$1.$2.$3-$4");
                 case endereco:
                     return aux.getEndereco();
+                case email:
+                    return aux.getEmail();
+                case senha:
+                    return aux.getSenha();
+                case telefone:
+                    return aux.getTelefone();
+                case cidade:
+                    return aux.getCidade();
+                case bairro:
+                    return aux.getBairro();
                 case dataContratacao:
                     return aux.getDataContratacao().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
                 default:

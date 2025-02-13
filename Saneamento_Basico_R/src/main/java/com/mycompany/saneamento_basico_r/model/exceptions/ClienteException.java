@@ -9,7 +9,7 @@ package com.mycompany.saneamento_basico_r.model.exceptions;
  * @author JonathasOliveira
  */
 
-public class ClienteException extends UsuarioException{
+public class ClienteException extends RuntimeException{
     public ClienteException(String msg){
         super(msg);
     } 

@@ -4,16 +4,10 @@
  */
 package com.mycompany.saneamento_basico_r.model.dao;
 
-
 import com.mycompany.saneamento_basico_r.factory.DatabaseJPA;
 import com.mycompany.saneamento_basico_r.model.entities.Funcionario;
-import java.util.ArrayList;
-import java.util.List;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.util.List;
 import javax.persistence.EntityManager;
 
 

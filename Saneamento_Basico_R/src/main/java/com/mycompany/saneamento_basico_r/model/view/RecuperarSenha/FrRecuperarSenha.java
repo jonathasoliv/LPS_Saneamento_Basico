@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.saneamento_basico_r.model.view;
+package com.mycompany.saneamento_basico_r.model.view.RecuperarSenha;
 
 import com.mycompany.saneamento_basico_r.controller.ClienteController;
 import java.text.ParseException;

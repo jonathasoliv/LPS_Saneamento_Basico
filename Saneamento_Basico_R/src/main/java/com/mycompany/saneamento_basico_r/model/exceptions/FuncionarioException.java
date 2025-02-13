@@ -8,7 +8,7 @@ package com.mycompany.saneamento_basico_r.model.exceptions;
  *
  * @author JonathasOliveira
  */
-public class FuncionarioException extends UsuarioException{
+public class FuncionarioException extends RuntimeException{
     public FuncionarioException(String msg){
         super(msg);
     } 

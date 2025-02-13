@@ -4,7 +4,7 @@
  */
 package com.mycompany.saneamento_basico_r.controller;
 
-import com.mycompany.saneamento_basico_r.model.dao.GerenteDAO;
+import com.mycompany.saneamento_basico_r.model.dao.GerenteDao;
 import com.mycompany.saneamento_basico_r.model.entities.Gerente;
 import com.mycompany.saneamento_basico_r.model.exceptions.GerenteException;
 import com.mycompany.saneamento_basico_r.valid.ValidateGerente;
@@ -16,11 +16,12 @@ import javax.swing.JTable;
  *
  * @author JonathasOliveira
  */
+
 public class GerenteController {
-    private GerenteDAO repositorio;
+    private GerenteDao repositorio;
 
     public GerenteController() {
-        repositorio = new GerenteDAO();
+        repositorio = new GerenteDao();
     }
 
     public void cadastrarGerente(String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {

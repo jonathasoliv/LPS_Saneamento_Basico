@@ -7,6 +7,20 @@ package com.mycompany.saneamento_basico_r.model.entities;
 import com.mycompany.saneamento_basico_r.model.entities.Usuario;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+/**
+ *
+ * @author JonathasOliveira
+ */
+import com.mycompany.saneamento_basico_r.model.entities.Usuario;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -26,9 +40,10 @@ import lombok.ToString;
 public class Gerente extends Usuario {
 
     private LocalDate dataContratacao;
-    public Gerente(String cpf, String nome, String email, String senha, LocalDate dataNascimento,
-            String telefone, String endereco, LocalDateTime deletadoEm, String historicoConsumo) {
-        super(0, cpf, nome, email, senha, dataNascimento, telefone, endereco, deletadoEm);
+    public Gerente(String nome, String sexo, int idade, String cpf, String endereco,
+            String email, String senha, String telefone, String cidade, String bairro, 
+            String unidadeConsumidora, LocalDateTime deletadoEm, String historicoConsumo) {
+        super(0,nome, sexo, idade, cpf, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora, deletadoEm);
         
         this.dataContratacao = dataContratacao;
     }

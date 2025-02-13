@@ -8,7 +8,6 @@ package com.mycompany.saneamento_basico_r.model.exceptions;
  *
  * @author JonathasOliveira
  */
-
 public class UsuarioException extends RuntimeException {
 
     public UsuarioException(String msg) {

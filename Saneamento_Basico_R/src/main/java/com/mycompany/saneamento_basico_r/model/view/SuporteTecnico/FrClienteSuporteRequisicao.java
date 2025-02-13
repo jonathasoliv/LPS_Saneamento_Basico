@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package com.mycompany.saneamento_basico_r.model.view.Cliente;
+package com.mycompany.saneamento_basico_r.model.view.SuporteTecnico;
 
 import com.mycompany.saneamento_basico_r.model.view.Planos.*;
 
@@ -30,58 +30,68 @@ public class FrClienteSuporteRequisicao extends javax.swing.JDialog {
     private void initComponents() {
 
         lblPlanos = new javax.swing.JLabel();
-        btnContratarPlano = new javax.swing.JButton();
+        btnEnviarMsg = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblPlanos.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         lblPlanos.setText("Como podemos ajudar?");
 
-        btnContratarPlano.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        btnContratarPlano.setText("Enviar Mensagem");
-        btnContratarPlano.addActionListener(new java.awt.event.ActionListener() {
+        btnEnviarMsg.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnEnviarMsg.setText("Enviar Mensagem");
+        btnEnviarMsg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnContratarPlanoActionPerformed(evt);
+                btnEnviarMsgActionPerformed(evt);
             }
         });
+
+        jLabel1.setText("Você receberá sua resposta no seu E-mail");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(78, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(101, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(lblPlanos, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(191, 191, 191))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnContratarPlano)
-                        .addGap(262, 262, 262))))
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(81, 81, 81))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(253, 253, 253)
+                        .addComponent(btnEnviarMsg))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(225, 225, 225)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(lblPlanos)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(btnContratarPlano)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addComponent(btnEnviarMsg)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnContratarPlanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContratarPlanoActionPerformed
+    private void btnEnviarMsgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarMsgActionPerformed
         
-    }//GEN-LAST:event_btnContratarPlanoActionPerformed
+    }//GEN-LAST:event_btnEnviarMsgActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,7 +151,8 @@ public class FrClienteSuporteRequisicao extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnContratarPlano;
+    private javax.swing.JButton btnEnviarMsg;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblPlanos;
     // End of variables declaration//GEN-END:variables

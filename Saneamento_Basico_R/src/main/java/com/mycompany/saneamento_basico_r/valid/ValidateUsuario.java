@@ -85,21 +85,33 @@ public class ValidateUsuario {
         }
     }
 
-    public Usuario validaCamposEntrada(String cpf, String nome, String email, String senha, String senhaConfirmada,
-            String dataNascimento,
-            String telefone, String endereco, String deletadoEm) {
+    public Usuario validaCamposEntrada(String nome, String sexo, int idade, String cpf, String endereco,
+            String email, String senha, String telefone, String cidade, String bairro, 
+            String unidadeConsumidora, LocalDateTime deletadoEm) {
 
         Usuario usuario = new Usuario();
 
+        if (nome == null || nome.isEmpty())
+            throw new UsuarioException("ERRO: Campo nome não pode ser vazio");
+        usuario.setNome(nome);
+        
+        if (sexo == null || sexo.isEmpty())
+            throw new UsuarioException("ERRO: Campo sexo não pode ser vazio");
+        usuario.setSexo(sexo);
+        
+        if (idade > 0)
+            throw new UsuarioException("ERRO: Campo idade não pode ser vazio");
+        usuario.setIdade(idade);
+        
         if (cpf == null || cpf.isEmpty())
             throw new UsuarioException("ERRO: Campo CPF não pode ser vazio.");
         if (!isCpfValido(cpf))
             throw new UsuarioException("ERRO: CPF não é válido");
         usuario.setCpf(cpf);
 
-        if (nome == null || nome.isEmpty())
-            throw new UsuarioException("ERRO: Campo nome não pode ser vazio");
-        usuario.setNome(nome);
+        if (endereco == null || endereco.isEmpty())
+            throw new UsuarioException("ERRO: Campo endereço não pode ser vazio.");
+        usuario.setEndereco(endereco);
 
         if (email == null || email.isEmpty())
             throw new UsuarioException("ERRO: Campo email não pode ser vazio.");
@@ -110,19 +122,9 @@ public class ValidateUsuario {
         if (!senha.equals(senhaConfirmada)) {
             throw new UsuarioException("ERRO: As senhas não coincidem.");
         }
-
         String senhaValidada = validaSenha(senha);
         usuario.setSenha(senhaValidada);
 
-        if (dataNascimento == null || dataNascimento.isEmpty())
-            throw new UsuarioException("ERRO: Campo data de nascimento não pode ser vazio.");
-        LocalDate dataConvertida;
-        try {
-            dataConvertida = LocalDate.parse(dataNascimento);
-        } catch (DateTimeParseException e) {
-            throw new UsuarioException("ERRO: Formato de data inválido.");
-        }
-        usuario.setDataNascimento(dataConvertida);
 
         if (telefone == null || telefone.isEmpty())
             throw new UsuarioException("ERRO: Campo telefone não pode ser vazio.");
@@ -131,9 +133,23 @@ public class ValidateUsuario {
                     "ERRO: Telefone deve estar nos formatos (xxxxx-xxxx), ((xx) xxxxx-xxxx) ou (+xx (xx) xxxxx-xxxx).");
         usuario.setTelefone(telefone);
 
-        if (endereco == null || endereco.isEmpty())
-            throw new UsuarioException("ERRO: Campo endereço não pode ser vazio.");
-        usuario.setEndereco(endereco);
+        if (cidade == null || cidade.isEmpty())
+            throw new UsuarioException("ERRO: Campo cidade não pode ser vazio.");
+        if (!cidade.matches("^[A-Za-zÀ-ÖØ-öø-ÿ\\s]+$"))
+             throw new UsuarioException("ERRO: A cidade deve conter apenas letras e espaços.");
+        usuario.setCidade(cidade);
+
+        if (bairro == null || bairro.isEmpty())
+            throw new UsuarioException("ERRO: Campo bairro não pode ser vazio.");
+        if (!bairro.matches("^[A-Za-zÀ-ÖØ-öø-ÿ\\s]+$"))
+            throw new UsuarioException("ERRO: O bairro deve conter apenas letras e espaços.");
+        usuario.setBairro(bairro);
+
+        if (unidadeConsumidora == null || unidadeConsumidora.isEmpty())
+            throw new UsuarioException("ERRO: Campo unidade consumidora não pode ser vazio.");
+        if (!unidadeConsumidora.matches("^[A-Za-z0-9]+$"))
+            throw new UsuarioException("ERRO: A unidade consumidora deve conter apenas letras e números.");
+        usuario.setUnidadeConsumidora(unidadeConsumidora);
 
         if (deletadoEm != null) {
             LocalDateTime dataExclusao;

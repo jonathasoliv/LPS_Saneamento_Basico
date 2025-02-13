@@ -5,9 +5,11 @@
  */
 package com.mycompany.saneamento_basico_r.model.view.Funcionario;
 
+import com.mycompany.saneamento_basico_r.model.view.SuporteTecnico.FrClienteSuporteRequisicao;
 import com.mycompany.saneamento_basico_r.model.view.Cliente.*;
 import com.mycompany.saneamento_basico_r.model.view.Cliente.FrClientePendencias;
 import com.mycompany.saneamento_basico_r.controller.ClienteController;
+import com.mycompany.saneamento_basico_r.model.view.CadastrarEmpresa.FrCadastroEmpresaSaneamento;
 import com.mycompany.saneamento_basico_r.model.view.Planos.FrPlanoConfirmacaoCancelamento;
 import com.mycompany.saneamento_basico_r.model.view.Planos.FrPlanosEscolher;
 import java.text.ParseException;
@@ -81,6 +83,7 @@ public class FrFuncionarioFuncoes extends javax.swing.JDialog {
 
         btnSuporte = new javax.swing.JButton();
         lblFuncionario = new javax.swing.JLabel();
+        btnCadastrarRede = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Alunos");
@@ -96,6 +99,14 @@ public class FrFuncionarioFuncoes extends javax.swing.JDialog {
         lblFuncionario.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         lblFuncionario.setText("Funções Funcionário");
 
+        btnCadastrarRede.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnCadastrarRede.setText("Cadastrar Rede de Saneamento");
+        btnCadastrarRede.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarRedeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,8 +117,13 @@ public class FrFuncionarioFuncoes extends javax.swing.JDialog {
                 .addGap(0, 214, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSuporte)
-                .addGap(254, 254, 254))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnSuporte)
+                        .addGap(254, 254, 254))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnCadastrarRede)
+                        .addGap(194, 194, 194))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +132,9 @@ public class FrFuncionarioFuncoes extends javax.swing.JDialog {
                 .addComponent(lblFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addComponent(btnSuporte)
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addGap(54, 54, 54)
+                .addComponent(btnCadastrarRede)
+                .addContainerGap(159, Short.MAX_VALUE))
         );
 
         pack();
@@ -126,6 +144,13 @@ public class FrFuncionarioFuncoes extends javax.swing.JDialog {
     private void btnSuporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuporteActionPerformed
         
     }//GEN-LAST:event_btnSuporteActionPerformed
+
+    private void btnCadastrarRedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarRedeActionPerformed
+        FrClienteSuporteRequisicao dlgSuporteRequisicao = new FrClienteSuporteRequisicao(this, true);
+
+        dlgSuporteRequisicao.setLocationRelativeTo(this);
+        dlgSuporteRequisicao.setVisible(true);
+    }//GEN-LAST:event_btnCadastrarRedeActionPerformed
 
     /**
      * Retorna o objeto (classe) da linha selecionada na grid.
@@ -145,6 +170,7 @@ public class FrFuncionarioFuncoes extends javax.swing.JDialog {
     }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCadastrarRede;
     private javax.swing.JButton btnSuporte;
     private javax.swing.JLabel lblFuncionario;
     // End of variables declaration//GEN-END:variables

@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import javax.persistence.EntityManager;
 
+
 public class AdministradorDao implements IDao<Administrador> {
 
     private EntityManager entityManager;

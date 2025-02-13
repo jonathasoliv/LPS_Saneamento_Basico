@@ -4,12 +4,10 @@
  */
 package com.mycompany.saneamento_basico_r.model.utils;
 
-import com.mycompany.saneamento_basico_r.model.entities.Usuario;
-
 /**
  *
  * @author JonathasOliveira
  */
 public interface INotificador {
-    boolean notificar(Usuario usuario, String titulo, String mensagem);
+    public boolean notificar(String nome, String emailUsuario, String cpf, String senha);
 }

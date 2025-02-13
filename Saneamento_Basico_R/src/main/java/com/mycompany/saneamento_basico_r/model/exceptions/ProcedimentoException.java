@@ -8,6 +8,8 @@ package com.mycompany.saneamento_basico_r.model.exceptions;
  *
  * @author JonathasOliveira
  */
-public class ProcedimentoException {
-    
+public class ProcedimentoException extends RuntimeException{
+    public ProcedimentoException(String msg){
+        super(msg);
+    } 
 }

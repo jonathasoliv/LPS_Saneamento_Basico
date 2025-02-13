@@ -8,6 +8,8 @@ package com.mycompany.saneamento_basico_r.model.exceptions;
  *
  * @author JonathasOliveira
  */
-public class RedeSaneamentoException {
-    
+public class RedeSaneamentoException extends RuntimeException{
+    public RedeSaneamentoException(String msg){
+        super(msg);
+    } 
 }

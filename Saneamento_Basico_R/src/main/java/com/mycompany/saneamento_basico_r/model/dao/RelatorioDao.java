@@ -14,7 +14,6 @@ import javax.persistence.EntityManager;
  *
  * @author JonathasOliveira
  */
-
 public class RelatorioDao implements IDao<Relatorio> {
     private EntityManager entityManager;
 

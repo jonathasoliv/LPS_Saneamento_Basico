@@ -10,7 +10,6 @@ import java.util.List;
  *
  * @author JonathasOliveira
  */
-
 public interface IDao<T> {
 
     public void salvar(T obj);

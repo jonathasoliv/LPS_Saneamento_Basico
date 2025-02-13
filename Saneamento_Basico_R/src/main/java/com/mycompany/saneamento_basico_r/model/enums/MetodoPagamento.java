@@ -25,3 +25,4 @@ public enum MetodoPagamento {
         return valor;
     }
 }
+

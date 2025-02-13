@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package com.mycompany.saneamento_basico_r.model.view;
+package com.mycompany.saneamento_basico_r.model.view.MenuPrincipal;
 
 import com.mycompany.saneamento_basico_r.model.view.Gerente.FrGerente;
 import com.mycompany.saneamento_basico_r.model.view.Planos.FrPlanos;

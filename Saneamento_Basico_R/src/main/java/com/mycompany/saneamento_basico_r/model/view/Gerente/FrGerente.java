@@ -6,7 +6,7 @@
 package com.mycompany.saneamento_basico_r.model.view.Gerente;
 
 import com.mycompany.saneamento_basico_r.controller.ClienteController;
-import com.mycompany.saneamento_basico_r.model.view.FrRecuperarSenha;
+import com.mycompany.saneamento_basico_r.model.view.RecuperarSenha.FrRecuperarSenha;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

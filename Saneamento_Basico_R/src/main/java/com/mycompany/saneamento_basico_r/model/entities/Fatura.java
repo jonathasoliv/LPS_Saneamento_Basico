@@ -4,6 +4,11 @@
  */
 package com.mycompany.saneamento_basico_r.model.entities;
 
+/**
+ *
+ * @author JonathasOliveira
+ */
+
 import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

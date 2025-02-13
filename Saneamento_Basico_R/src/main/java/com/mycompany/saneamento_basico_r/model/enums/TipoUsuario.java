@@ -12,6 +12,7 @@ public enum TipoUsuario {
 
     CLIENTE("Cliente"),
     FUNCIONARIO("Funcionario(a)"),
+    GERENTE("Gerente"),
     ADMINISTRADOR("Administrador(a)");
 
     private final String valor;

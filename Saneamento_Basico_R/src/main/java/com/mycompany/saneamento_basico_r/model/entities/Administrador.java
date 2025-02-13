@@ -4,7 +4,6 @@
  */
 package com.mycompany.saneamento_basico_r.model.entities;
 
-import com.mycompany.saneamento_basico_r.model.entities.Usuario;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -18,10 +17,10 @@ public class Administrador extends Usuario{
         super();
     }
     
-    public Administrador(String cpf, String nome, String email, String senha, LocalDate dataNascimento,
-            String telefone, String endereco, LocalDateTime deletadoEm, String historicoConsumo) {
-        super(0, cpf, nome, email, senha, dataNascimento, telefone, endereco, deletadoEm);
-
+    public Administrador(String nome, String sexo, int idade, String cpf, String endereco,
+            String email, String senha, String telefone, String cidade, String bairro, 
+            String unidadeConsumidora, LocalDateTime deletadoEm) {
+        super(0, nome, sexo, idade, cpf, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora, deletadoEm);
     }
 
 }
