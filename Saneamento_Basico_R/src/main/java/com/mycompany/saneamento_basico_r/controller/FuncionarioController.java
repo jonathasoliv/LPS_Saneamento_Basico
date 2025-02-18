@@ -25,14 +25,11 @@ public class FuncionarioController {
     }
 
     public void cadastrarFuncionario(String nome, String sexo, String idade,
-            String cpf, String dataNascimento, String endereco, String email,
-            String senha, String telefone, String cidade, String bairro,
-            
-            String unidadeConsumidora) {
+            String cpf, String endereco, String email,
+            String senha, String telefone, String cidade, String bairro) {
         ValidateFuncionario valid = new ValidateFuncionario();
-        Funcionario novoFuncionario = valid.validaCamposEntrada(nome, sexo,
-                idade, cpf, dataNascimento, endereco, email, senha, telefone,
-                cidade, bairro, unidadeConsumidora);
+        Funcionario novoFuncionario = valid.validaCamposEntrada(nome, sexo, idade, cpf, endereco, email, senha, telefone,
+                cidade, bairro);
 
         if (repositorio.findByEndereco(endereco) == null) {
             repositorio.save(novoFuncionario);

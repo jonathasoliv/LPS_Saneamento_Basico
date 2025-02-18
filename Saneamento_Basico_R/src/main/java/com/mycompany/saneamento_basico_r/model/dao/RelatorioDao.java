@@ -14,7 +14,17 @@ import javax.persistence.EntityManager;
  *
  * @author JonathasOliveira
  */
-public class RelatorioDao implements IDao<Relatorio> {
+import com.mycompany.saneamento_basico_r.factory.DatabaseJPA;
+import com.mycompany.saneamento_basico_r.model.entities.Relatorio;
+import java.time.LocalDateTime;
+import java.util.List;
+import javax.persistence.EntityManager;
+
+/**
+ *
+ * @author JonathasOliveira
+ */
+public class RelatorioDAO implements IDao<Relatorio> {
     private EntityManager entityManager;
 
     @Override

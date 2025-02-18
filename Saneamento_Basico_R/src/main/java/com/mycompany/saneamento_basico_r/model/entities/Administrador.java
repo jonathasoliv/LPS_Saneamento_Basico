@@ -3,24 +3,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.saneamento_basico_r.model.entities;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
-/**
- *
- * @author JonathasOliveira
- */
-public class Administrador extends Usuario{
+@Entity
+@DiscriminatorValue("ADMIN")
+@Setter
+@Getter
+@ToString(callSuper = true)
+@NoArgsConstructor
+public class Administrador extends Pessoa {
 
-    public Administrador() {
-        super();
-    }
-    
-    public Administrador(String nome, String sexo, int idade, String cpf, String endereco,
-            String email, String senha, String telefone, String cidade, String bairro, 
-            String unidadeConsumidora, LocalDateTime deletadoEm) {
-        super(0, nome, sexo, idade, cpf, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora, deletadoEm);
+    public Administrador(String nome, String sexo, String idade,
+            String cpf, String endereco, String email,
+            String senha, String telefone, String cidade, String bairro)
+    {
+        super(0, nome, sexo, idade, cpf, endereco, email, senha, telefone,
+                cidade, bairro);
     }
 
 }

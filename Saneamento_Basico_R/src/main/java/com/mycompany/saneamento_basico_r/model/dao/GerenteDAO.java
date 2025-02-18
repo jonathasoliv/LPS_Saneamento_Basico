@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import javax.persistence.EntityManager;
 
-public class GerenteDao implements IDao<Gerente> {
+public class GerenteDAO implements IDao<Gerente> {
 
     private EntityManager entityManager;
 
@@ -41,7 +41,6 @@ public class GerenteDao implements IDao<Gerente> {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
         this.entityManager.getTransaction().begin();
-        obj.setDeletadoEm(LocalDateTime.now());
         this.entityManager.merge(obj);
         this.entityManager.getTransaction().commit();
 
@@ -64,12 +63,12 @@ public class GerenteDao implements IDao<Gerente> {
     public List<Gerente> buscarTodos() {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
-        List<Gerente> gerentes = this.entityManager
+        List<Gerente> gerente = this.entityManager
                 .createQuery("FROM Gerente g WHERE g.deletadoEm IS NULL ORDER BY LOWER(g.nome)", Gerente.class)
                 .getResultList();
 
         this.entityManager.close();
-        return gerentes;
+        return gerente;
     }
 
     public Gerente buscarPorCpf(String cpf) {

@@ -3,15 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.saneamento_basico_r.model.dao;
+import java.util.List;
+
+import javax.persistence.EntityManager;
 
 import com.mycompany.saneamento_basico_r.factory.DatabaseJPA;
 import com.mycompany.saneamento_basico_r.model.entities.Funcionario;
-import java.time.LocalDateTime;
-import java.util.List;
-import javax.persistence.EntityManager;
 
-
-public class FuncionarioDao implements IDao<Funcionario> {
+public class FuncionarioDAO implements IDao<Funcionario> {
 
     private EntityManager entityManager;
 
@@ -35,7 +34,6 @@ public class FuncionarioDao implements IDao<Funcionario> {
         this.entityManager.getTransaction().commit();
 
         this.entityManager.close();
-
     }
 
     @Override
@@ -43,7 +41,6 @@ public class FuncionarioDao implements IDao<Funcionario> {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
         this.entityManager.getTransaction().begin();
-        obj.setDeletadoEm(LocalDateTime.now());
         this.entityManager.merge(obj);
         this.entityManager.getTransaction().commit();
 
@@ -60,19 +57,18 @@ public class FuncionarioDao implements IDao<Funcionario> {
         this.entityManager.close();
 
         return funcionario;
-
     }
 
     @Override
     public List<Funcionario> buscarTodos() {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
-        List<Funcionario> funcionarios = this.entityManager
-                .createQuery("FROM Funcionario f WHERE f.deletadoEm IS NULL ORDER BY LOWER(f.nome)", Funcionario.class)
+        List<Funcionario> funcionario = this.entityManager
+                .createQuery("FROM Funcionario f WHERE f.deletadoEm IS NULL ORDER BY LOWER(m.nome)", Funcionario.class)
                 .getResultList();
 
         this.entityManager.close();
-        return funcionarios;
+        return funcionario;
     }
 
     public Funcionario buscarPorCpf(String cpf) {
@@ -96,6 +92,21 @@ public class FuncionarioDao implements IDao<Funcionario> {
         Funcionario funcionario = this.entityManager
                 .createQuery("FROM Funcionario f WHERE f.email = :email AND f.deletadoEm IS NULL", Funcionario.class)
                 .setParameter("email", email)
+                .getResultList()
+                .stream()
+                .findFirst()
+                .orElse(null);
+
+        this.entityManager.close();
+        return funcionario;
+    }
+
+    public Funcionario buscarPorCrm(String cpf) {
+        this.entityManager = DatabaseJPA.getInstance().getEntityManager();
+
+        Funcionario funcionario = this.entityManager
+                .createQuery("FROM Funcionario f WHERE f.cpf = :cpf AND f.deletadoEm IS NULL", Funcionario.class)
+                .setParameter("cpf", cpf)
                 .getResultList()
                 .stream()
                 .findFirst()

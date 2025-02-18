@@ -5,8 +5,8 @@
 package com.mycompany.saneamento_basico_r.controller;
 
 import com.mycompany.saneamento_basico_r.controller.tableModel.TMCliente;
+import com.mycompany.saneamento_basico_r.model.dao.ClienteDAO;
 import com.mycompany.saneamento_basico_r.model.entities.Cliente;
-import com.mycompany.saneamento_basico_r.model.dao.ClienteDao;
 import com.mycompany.saneamento_basico_r.model.exceptions.ClienteException;
 import com.mycompany.saneamento_basico_r.valid.ValidateCliente;
 import java.util.ArrayList;
@@ -19,10 +19,10 @@ import javax.swing.JTable;
  */
 
 public class ClienteController {
-    private ClienteDao repositorio;
+    private ClienteDAO repositorio;
 
     public ClienteController() {
-        repositorio = new ClienteDao();
+        repositorio = new ClienteDAO();
     }
 
     public void cadastrarCliente(String nome, String sexo, String idade,
@@ -36,7 +36,7 @@ public class ClienteController {
                 endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora);
 
         if (repositorio.findByEndereco(endereco) == null) {
-            repositorio.save(novoCliente);
+            repositorio.salvar(novoCliente);
         } else {
             throw new ClienteException("Error - Já existe um cliente com neste 'endereco'.");
         }
@@ -70,7 +70,7 @@ public class ClienteController {
 
     public void excluirCliente(Cliente cliente) {
         if (cliente != null) {
-            repositorio.delete(cliente);
+            repositorio.deletar(cliente);
         } else {
             throw new ClienteException("Error - Cliente inexistente.");
         }

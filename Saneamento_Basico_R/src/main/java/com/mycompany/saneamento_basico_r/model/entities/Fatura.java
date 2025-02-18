@@ -36,7 +36,7 @@ public class Fatura {
 
   @ManyToOne
   @JoinColumn(name = "id_pagamento_usuario")
-  private Usuario registradoPor;
+  private Pessoa registradoPor;
   @ManyToOne
   @JoinColumn(name = "id_pagamento_cliente")
   private Cliente cliente;
@@ -46,7 +46,7 @@ public class Fatura {
   private Procedimento manutencao;
   private LocalDateTime deletadoEm;
 
-  public Fatura(double valor, Usuario registradoPor, Cliente cliente, String metodoPagamento, Procedimento manutencao, LocalDateTime deletadoEm) {
+  public Fatura(double valor, Pessoa registradoPor, Cliente cliente, String metodoPagamento, Procedimento manutencao, LocalDateTime deletadoEm) {
     this.id = 0;
     this.valor = valor;
     this.registradoPor = registradoPor;

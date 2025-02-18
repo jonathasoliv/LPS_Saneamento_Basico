@@ -4,35 +4,34 @@
  */
 package com.mycompany.saneamento_basico_r.model.entities;
 
-import com.mycompany.saneamento_basico_r.model.entities.Usuario;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-
 
 @Entity
 @DiscriminatorValue("CLIENTE")
 @Setter
 @Getter
+@ToString(callSuper = true)
 @NoArgsConstructor
-public class Cliente extends Usuario {
- 
-    private String historicoConsumo;
+public class Cliente extends Pessoa {
 
-    public Cliente(String nome, String sexo, int idade, String cpf, String endereco,
-            String email, String senha, String telefone, String cidade, String bairro, 
-            String unidadeConsumidora, LocalDateTime deletadoEm, String historicoConsumo) {
-        super(0, nome, sexo, idade, cpf, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora, deletadoEm);
+    private String unidadeConsumidora;
+
+    public Cliente(String nome, String sexo, String idade,
+            String cpf, String endereco, String email,
+            String senha, String telefone, String cidade, String bairro,
+            String unidadeConsumidora)
+    {
+        super(0, nome, sexo, idade, cpf, endereco, email, senha, telefone,
+                cidade, bairro);
         
-        this.historicoConsumo = historicoConsumo;
+        this.unidadeConsumidora = unidadeConsumidora;
+
     }
 
 }

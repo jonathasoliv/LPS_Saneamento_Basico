@@ -4,24 +4,14 @@
  */
 package com.mycompany.saneamento_basico_r.model.dao;
 
-import com.mycompany.saneamento_basico_r.factory.DatabaseJPA;
-import com.mycompany.saneamento_basico_r.factory.Persistencia;
-import com.mycompany.saneamento_basico_r.model.entities.Cliente;
-import java.util.ArrayList;
 import java.util.List;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.time.LocalDateTime;
+
 import javax.persistence.EntityManager;
 
-/**
- *
- * @author JonathasOliveira
- */
+import com.mycompany.saneamento_basico_r.factory.DatabaseJPA;
+import com.mycompany.saneamento_basico_r.model.entities.Cliente;
 
-public class ClienteDao implements IDao<Cliente> {
+public class ClienteDAO implements IDao<Cliente> {
 
     private EntityManager entityManager;
 
@@ -53,7 +43,6 @@ public class ClienteDao implements IDao<Cliente> {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
         this.entityManager.getTransaction().begin();
-        obj.setDeletadoEm(LocalDateTime.now());
         this.entityManager.merge(obj);
         this.entityManager.getTransaction().commit();
 
@@ -77,12 +66,12 @@ public class ClienteDao implements IDao<Cliente> {
     public List<Cliente> buscarTodos() {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
-        List<Cliente> clientes = this.entityManager
+        List<Cliente> cliente = this.entityManager
                 .createQuery("FROM Cliente c WHERE c.deletadoEm IS NULL ORDER BY LOWER(c.nome)", Cliente.class)
                 .getResultList();
 
         this.entityManager.close();
-        return clientes;
+        return cliente;
     }
 
     public Cliente buscarPorCpf(String cpf) {

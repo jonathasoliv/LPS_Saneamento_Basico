@@ -3,14 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.saneamento_basico_r.controller.tableModel;
+import java.time.format.DateTimeFormatter;
 
-import com.mycompany.saneamento_basico_r.model.entities.Funcionario;
+import com.mycompany.saneamento_basico_r.model.entities.Administrador;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
-public class TMFuncionario extends AbstractTableModel {
+import java.util.List;
 
-    private List<Funcionario> lista;
+import java.util.List;
+
+import javax.swing.table.AbstractTableModel;
+
+import javax.swing.table.AbstractTableModel;
+
+public class TMAdmin extends AbstractTableModel {
+
+    private List<Administrador> lista;
 
     private final int id = 0;
     private final int nome = 1;
@@ -23,14 +32,15 @@ public class TMFuncionario extends AbstractTableModel {
     private final int telefone = 8;
     private final int cidade = 9;
     private final int bairro = 10;
+    //private final int unidadeConsumidora = 11;
 
-    public TMFuncionario(List<Funcionario> listaFuncionarios) {
-        lista = listaFuncionarios;
+    public TMAdmin(List<Administrador> listaAdministrador) {
+        lista = listaAdministrador;
     }
 
     @Override
     public int getColumnCount() {
-        return 11;
+        return 12;
     }
 
     @Override
@@ -63,7 +73,8 @@ public class TMFuncionario extends AbstractTableModel {
                 return "Cidade";
             case bairro:
                 return "Bairro";
-            
+            //case unidadeConsumidora:
+           //     return "Unidade Consumidora";
             default:
                 return "";
         }
@@ -71,7 +82,7 @@ public class TMFuncionario extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Funcionario aux = new Funcionario();
+        Administrador aux = new Administrador();
         if (lista.isEmpty()) {
             return aux;
         } else {
@@ -102,7 +113,8 @@ public class TMFuncionario extends AbstractTableModel {
                     return aux.getCidade();
                 case bairro:
                     return aux.getBairro();
-                
+                //case unidadeConsumidora:
+                //    return aux.getUnidadeConsumidora();
                 default:
                     return null;
             }

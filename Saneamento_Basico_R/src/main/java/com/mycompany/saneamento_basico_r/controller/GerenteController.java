@@ -4,7 +4,7 @@
  */
 package com.mycompany.saneamento_basico_r.controller;
 
-import com.mycompany.saneamento_basico_r.model.dao.GerenteDao;
+import com.mycompany.saneamento_basico_r.model.dao.GerenteDAO;
 import com.mycompany.saneamento_basico_r.model.entities.Gerente;
 import com.mycompany.saneamento_basico_r.model.exceptions.GerenteException;
 import com.mycompany.saneamento_basico_r.valid.ValidateGerente;
@@ -18,15 +18,19 @@ import javax.swing.JTable;
  */
 
 public class GerenteController {
-    private GerenteDao repositorio;
+    private GerenteDAO repositorio;
 
     public GerenteController() {
-        repositorio = new GerenteDao();
+        repositorio = new GerenteDAO();
     }
 
-    public void cadastrarGerente(String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {
+    public void cadastrarGerente(String nome, String sexo, String idade,
+            String cpf, String endereco, String email,
+            String senha, String telefone, String cidade, String bairro) {
+        
         ValidateGerente valid = new ValidateGerente();
-        Gerente novoGerente = valid.validaCamposEntrada(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora);
+        Gerente novoGerente = valid.validaCamposEntrada(nome, sexo, idade, cpf, endereco, email, senha, telefone,
+                cidade, bairro);
 
         if (repositorio.findByEndereco(endereco) == null) {
             repositorio.save(novoGerente);
@@ -35,9 +39,13 @@ public class GerenteController {
         }
     }
 
-    public void atualizarGerente(int idGerente, String nome, String sexo, int idade, String cpf, String dataNascimento, String endereco, String email, String senha, String telefone, String cidade, String bairro, String unidadeConsumidora) {
+    public void atualizarGerente(int idGerente, String nome, String sexo, String idade,
+            String cpf, String endereco, String email,
+            String senha, String telefone, String cidade, String bairro) {
+        
         ValidateGerente valid = new ValidateGerente();
-        Gerente novoGerente = valid.validaCamposEntrada(nome, sexo, idade, cpf, dataNascimento, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora);
+        Gerente novoGerente = valid.validaCamposEntrada(nome, sexo, idade, cpf, endereco, email, senha, telefone,
+                cidade, bairro);
         novoGerente.setId(idGerente);
         
         repositorio.update(novoGerente);
