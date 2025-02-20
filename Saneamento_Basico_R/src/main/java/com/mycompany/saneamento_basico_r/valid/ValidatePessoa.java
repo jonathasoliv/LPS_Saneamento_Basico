@@ -80,8 +80,7 @@ public class ValidatePessoa {
 
     public Pessoa validaCamposEntrada(String nome, String sexo, String idade,
             String cpf, String endereco, String email,
-            String senha, String telefone, String cidade, String bairro,
-            String unidadeConsumidora) {
+            String senha, String telefone, String cidade, String bairro) {
 
         Pessoa cliente = new Pessoa();
 

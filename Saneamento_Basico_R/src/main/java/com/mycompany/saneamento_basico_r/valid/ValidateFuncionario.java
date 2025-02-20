@@ -25,8 +25,8 @@ public class ValidateFuncionario extends ValidatePessoa {
             String senha, String telefone, String cidade, String bairro) {
 
         Funcionario funcionario = new Funcionario();
-        Pessoa base = super.validaCamposEntrada(nome, sexo, idade, cpf, endereco, email, senha, telefone,
-                cidade, bairro);
+        Pessoa base = super.validaCamposEntrada(nome, sexo, idade, cpf,
+                endereco, email, senha, telefone, cidade, bairro);
         
         funcionario.setNome(base.getNome());
         funcionario.setSexo(base.getSexo());

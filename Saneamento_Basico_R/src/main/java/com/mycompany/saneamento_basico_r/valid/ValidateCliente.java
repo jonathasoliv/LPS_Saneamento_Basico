@@ -17,8 +17,8 @@ public class ValidateCliente extends ValidatePessoa {
 
         Cliente cliente = new Cliente();
         
-        Pessoa base = super.validaCamposEntrada(0, nome, sexo, idade, cpf, endereco, email, senha, telefone,
-                cidade, bairro, unidadeConsumidora);
+        Pessoa base = super.validaCamposEntrada(nome, sexo, idade, cpf,
+                endereco, email, senha, telefone, cidade, bairro);
         
         cliente.setNome(base.getNome());
         cliente.setSexo(base.getSexo());

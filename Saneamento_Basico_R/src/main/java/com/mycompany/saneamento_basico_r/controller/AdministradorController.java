@@ -5,7 +5,7 @@
 package com.mycompany.saneamento_basico_r.controller;
 
 import com.mycompany.saneamento_basico_r.controller.tableModel.TMAdministrador;
-import com.mycompany.saneamento_basico_r.model.dao.AdministradorDao;
+import com.mycompany.saneamento_basico_r.model.dao.AdministradorDAO;
 import com.mycompany.saneamento_basico_r.model.entities.Administrador;
 import com.mycompany.saneamento_basico_r.model.exceptions.AdministradorException;
 import com.mycompany.saneamento_basico_r.model.exceptions.ClienteException;
@@ -16,12 +16,12 @@ import java.util.List;
 import javax.swing.JTable;
 public class AdministradorController {
 
-    private AdministradorDao repositorio;
+    private AdministradorDAO repositorio;
     private ValidateAdministrador validador;
    
 
     public AdministradorController() {
-        repositorio = new AdministradorDao();
+        repositorio = new AdministradorDAO();
         validador = new ValidateAdministrador();
        
     }
