@@ -4,6 +4,7 @@
  */
 package com.mycompany.saneamento_basico_r.controller;
 
+import com.mycompany.saneamento_basico_r.controller.tableModel.TMCadGerente;
 import com.mycompany.saneamento_basico_r.model.dao.GerenteDAO;
 import com.mycompany.saneamento_basico_r.model.entities.Gerente;
 import com.mycompany.saneamento_basico_r.model.exceptions.GerenteException;
@@ -32,8 +33,8 @@ public class GerenteController {
         Gerente novoGerente = valid.validaCamposEntrada(nome, sexo, idade, cpf, endereco, email, senha, telefone,
                 cidade, bairro);
 
-        if (repositorio.findByEndereco(endereco) == null) {
-            repositorio.save(novoGerente);
+        if (repositorio.buscarPorCpf(cpf) == null) {
+            repositorio.salvar(novoGerente);
         } else {
             throw new GerenteException("Error - Já existe um gerente com neste 'endereco'.");
         }
@@ -48,15 +49,15 @@ public class GerenteController {
                 cidade, bairro);
         novoGerente.setId(idGerente);
         
-        repositorio.update(novoGerente);
+        repositorio.editar(novoGerente);
     }
 
     public Gerente buscarGerente(String endereco) {
-        return (Gerente) this.repositorio.findByEndereco(endereco);
+        return (Gerente) this.repositorio.buscarPorCpf(endereco);
     }
 
     public void atualizarTabela(JTable grd) {
-        List<Object> lst = repositorio.findAll();
+        List<Gerente> lst = repositorio.buscarTodos();
         
         List<Gerente> lstGerente = new ArrayList<>();
         for(Object obj : lst){
@@ -64,14 +65,14 @@ public class GerenteController {
                 lstGerente.add((Gerente)obj);
             }
         }
-        //TMCadGerente tmGerente = new TMCadGerente(lstGerente); CONFERIR SE VAI FUNCIONAR NO SEU PC
+        //TMCadGerente tmGerente = new TMCadGerente(lstGerente); //CONFERIR SE VAI FUNCIONAR NO SEU PC
         //grd.setModel(tmGerente);        
     }
     
 
     public void excluirGerente(Gerente gerente) {
         if (gerente != null) {
-            repositorio.delete(gerente);
+            repositorio.deletar(gerente);
         } else {
             throw new GerenteException("Error - gerente inexistente.");
         }

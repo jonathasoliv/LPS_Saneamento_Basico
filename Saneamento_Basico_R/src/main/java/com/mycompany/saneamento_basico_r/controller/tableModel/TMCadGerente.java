@@ -67,8 +67,6 @@ public class TMCadGerente extends AbstractTableModel{
                 return gerente.getCidade();
             case COL_BAIRRO:
                 return gerente.getBairro();
-            case COL_UNIDADECONSUMIDORA:
-                return gerente.getUnidadeConsumidora();
             default:
                 return null;
         }
@@ -97,8 +95,6 @@ public class TMCadGerente extends AbstractTableModel{
                 return "Cidade";
             case COL_BAIRRO:
                 return "Bairro";
-            case COL_UNIDADECONSUMIDORA:
-                return "Unidade Consumidora";
             default:
                 return "";
         }

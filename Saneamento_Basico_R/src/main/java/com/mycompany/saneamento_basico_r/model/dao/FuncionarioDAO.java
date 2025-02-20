@@ -101,19 +101,4 @@ public class FuncionarioDAO implements IDao<Funcionario> {
         return funcionario;
     }
 
-    public Funcionario buscarPorCrm(String cpf) {
-        this.entityManager = DatabaseJPA.getInstance().getEntityManager();
-
-        Funcionario funcionario = this.entityManager
-                .createQuery("FROM Funcionario f WHERE f.cpf = :cpf AND f.deletadoEm IS NULL", Funcionario.class)
-                .setParameter("cpf", cpf)
-                .getResultList()
-                .stream()
-                .findFirst()
-                .orElse(null);
-
-        this.entityManager.close();
-        return funcionario;
-    }
-
 }

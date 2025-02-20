@@ -7,14 +7,9 @@ package com.mycompany.saneamento_basico_r.controller;
 import com.mycompany.saneamento_basico_r.controller.tableModel.TMAdministrador;
 import com.mycompany.saneamento_basico_r.model.dao.AdministradorDAO;
 import com.mycompany.saneamento_basico_r.model.entities.Administrador;
-import com.mycompany.saneamento_basico_r.model.exceptions.AdminException;
 import com.mycompany.saneamento_basico_r.model.exceptions.ClienteException;
 import com.mycompany.saneamento_basico_r.model.utils.INotificador;
-import com.mycompany.saneamento_basico_r.model.utils.NotificarEmail;
-import com.mycompany.saneamento_basico_r.valid.ValidateAdministrador;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import com.mycompany.saneamento_basico_r.valid.ValidateAdmin;
 import javax.swing.JTable;
 
 public class AdminController {
@@ -26,13 +21,13 @@ public class AdminController {
 
     public AdminController() {
         repositorio = new AdministradorDAO();
-       // validador = new ValidateAdmin();
+        validador = new ValidateAdmin();
        // notificador = new NotificarEmail();
         
     }
 
     public void atualizarTabela(JTable grd) {
-        Util.jTableShow(grd, new TMAdmin(repositorio.buscarTodos()), null);
+        Util.jTableShow(grd, new TMAdministrador(repositorio.buscarTodos()), null);
     }
 
     public Administrador buscar(int id) {
@@ -63,15 +58,12 @@ public class AdminController {
         return admin;
     }
 
-    public void salvar(String cpf, String nome, String email, String senha, String senhaConfirmada,
-            String dataNascimento,
-            String telefone, String endereco, String deletadoEm) {
+    public void salvar(String nome, String sexo, String idade,
+            String cpf, String endereco, String email,
+            String senha, String telefone, String cidade, String bairro) {
 
-        Administrador novoAdm = validador.validaCamposEntrada(cpf, nome, email, senha, senhaConfirmada, dataNascimento,
-                telefone, endereco,
-                deletadoEm);
-        String hashSenha = gerenciadorCriptografia.criptografarSenha(novoAdm.getSenha());
-        novoAdm.setSenha(hashSenha);
+        Administrador novoAdm = validador.validaCamposEntrada(nome, sexo, idade,
+                cpf, endereco, email, senha, telefone, cidade, bairro);
 
         Administrador admExistente = repositorio.buscarPorCpf(novoAdm.getCpf());
         if (admExistente != null) {
@@ -85,11 +77,12 @@ public class AdminController {
         repositorio.salvar(novoAdm);
     }
 
-    public void editar(int id, String cpf, String nome, String email, String senha, String dataNascimento,
-            String telefone, String endereco, String deletadoEm) {
-        Administrador novoAdm = validador.validaCamposEntrada(cpf, nome, email, senha, senha, dataNascimento, telefone,
-                endereco,
-                deletadoEm);
+    public void editar(int id, String nome, String sexo, String idade,
+            String cpf, String endereco, String email,
+            String senha, String telefone, String cidade, String bairro)
+    {
+        Administrador novoAdm = validador.validaCamposEntrada(nome, sexo, idade,
+                cpf, endereco, email, senha, telefone, cidade, bairro);
         novoAdm.setId(id);
 
         Administrador admExistente = repositorio.buscarPorCpf(novoAdm.getCpf());

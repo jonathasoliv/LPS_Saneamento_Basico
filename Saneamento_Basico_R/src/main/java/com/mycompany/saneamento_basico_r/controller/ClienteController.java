@@ -35,7 +35,7 @@ public class ClienteController {
         Cliente novoCliente = valid.validaCamposEntrada(nome, sexo, idade, cpf,
                 endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora);
 
-        if (repositorio.findByEndereco(endereco) == null) {
+        if (repositorio.buscarPorCpf(cpf) == null) {
             repositorio.salvar(novoCliente);
         } else {
             throw new ClienteException("Error - Já existe um cliente com neste 'endereco'.");
@@ -47,15 +47,15 @@ public class ClienteController {
         Cliente novoCliente = valid.validaCamposEntrada(nome, sexo, idade, cpf, endereco, email, senha, telefone, cidade, bairro, unidadeConsumidora);
         novoCliente.setId(idCliente);
         
-        repositorio.update(novoCliente);
+        repositorio.editar(novoCliente);
     }
 
-    public Cliente buscarCliente(String endereco) {
-        return (Cliente) this.repositorio.findByEndereco(endereco);
+    public Cliente buscarCliente(String cpf) {
+        return (Cliente) this.repositorio.buscarPorCpf(cpf);
     }
 
     public void atualizarTabela(JTable grd) {
-        List<Object> lst = repositorio.findAll();
+        List<Cliente> lst = repositorio.buscarTodos();
         
         List<Cliente> lstClientes = new ArrayList<>();
         for(Object obj : lst){

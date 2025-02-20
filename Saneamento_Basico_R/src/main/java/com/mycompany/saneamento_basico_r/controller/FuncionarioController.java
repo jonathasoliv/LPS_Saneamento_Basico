@@ -31,35 +31,34 @@ public class FuncionarioController {
         Funcionario novoFuncionario = valid.validaCamposEntrada(nome, sexo, idade, cpf, endereco, email, senha, telefone,
                 cidade, bairro);
 
-        if (repositorio.findByEndereco(endereco) == null) {
-            repositorio.save(novoFuncionario);
+        if (repositorio.buscarPorCpf(endereco) == null) {
+            repositorio.salvar(novoFuncionario);
         } else {
             throw new FuncionarioException("Error - Já existe um funcionario com neste 'endereco'.");
         }
     }
 
-    public void atualizarFuncionario(String idFuncionario, String nome,
-            String sexo, String idade, String cpf, String dataNascimento,
-            String endereco, String email, String senha, String telefone,
-            String cidade, String bairro, String unidadeConsumidora)
+    public void atualizarFuncionario(String idFuncionario, String nome, String sexo, String idade,
+            String cpf, String endereco, String email,
+            String senha, String telefone, String cidade, String bairro,
+            String unidadeConsumidora)
     {
         ValidateFuncionario valid = new ValidateFuncionario();
         
-        Funcionario novoFuncionario = valid.validaCamposEntrada(nome, sexo,
-                idade, cpf, dataNascimento, endereco, email, senha, telefone,
-                cidade, bairro, unidadeConsumidora);
+        Funcionario novoFuncionario = valid.validaCamposEntrada(nome, sexo, idade,
+                cpf, endereco, email, senha, telefone, cidade, bairro);
         
         novoFuncionario.setId(Integer.parseInt(idFuncionario));
         
-        repositorio.update(novoFuncionario);
+        repositorio.editar(novoFuncionario);
     }
 
-    public Funcionario buscarFuncionario(String endereco) {
-        return (Funcionario) this.repositorio.findByEndereco(endereco);
+    public Funcionario buscarFuncionario(String cpf) {
+        return (Funcionario) this.repositorio.buscarPorCpf(cpf);
     }
 
     public void atualizarTabela(JTable grd) {
-        List<Object> lst = repositorio.findAll();
+        List<Funcionario> lst = repositorio.buscarTodos();
         
         List<Funcionario> lstFuncionario = new ArrayList<>();
         for(Object obj : lst){
@@ -74,7 +73,7 @@ public class FuncionarioController {
 
     public void excluirFuncionario(Funcionario funcionario) {
         if (funcionario != null) {
-            repositorio.delete(funcionario);
+            repositorio.deletar(funcionario);
         } else {
             throw new FuncionarioException("Error - Funcionario inexistente.");
         }

@@ -5,7 +5,6 @@
 package com.mycompany.saneamento_basico_r.controller.tableModel;
 
 import com.mycompany.saneamento_basico_r.model.entities.Administrador;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
@@ -24,7 +23,6 @@ public class TMAdministrador extends AbstractTableModel {
     private final int telefone = 8;
     private final int cidade = 9;
     private final int bairro = 10;
-    private final int unidadeConsumidora = 11;
 
     public TMAdministrador(List<Administrador> listaAdministrador) {
         lista = listaAdministrador;
@@ -65,8 +63,6 @@ public class TMAdministrador extends AbstractTableModel {
                 return "Cidade";
             case bairro:
                 return "Bairro";
-            case unidadeConsumidora:
-                return "Unidade Consumidora";
             default:
                 return "";
         }
@@ -105,8 +101,6 @@ public class TMAdministrador extends AbstractTableModel {
                     return aux.getCidade();
                 case bairro:
                     return aux.getBairro();
-                case unidadeConsumidora:
-                    return aux.getUnidadeConsumidora();
                 default:
                     return null;
             }
