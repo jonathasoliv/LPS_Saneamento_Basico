@@ -8,7 +8,7 @@ package com.mycompany.saneamento_basico_r.controller;
  *
  * @author JonathasOliveira
  */
-
+/*
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
@@ -92,3 +92,4 @@ public class RelatorioController {
         geradorDocumento.combinarDocumentos(caminho, caminhosEntrada);
     }
 }
+*/
